@@ -1,6 +1,7 @@
 # shbconseil.com
 
-Site de SHB CONSEIL EI publié avec GitHub Pages.
+Site de SHB CONSEIL EI (GitHub Pages).
 
-- index.html : site + catalogue
-- exemple.html : démos par secteur
+- `/` français, `/en/`, `/es/`, `/it/`, `/de/`, `/el/`, `/pt/`, `/ar/`
+- `index.html` : site + catalogue ; `exemple.html` : démos par secteur
+- `img/` : photos d'illustration (Unsplash)
