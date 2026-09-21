@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo de web corporativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&family=Oswald:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#FBF7F3; --surface:#FFFFFF; --ink:#2A1F1C; --muted:#6E5F59; --line:#EADFD7;
+  --accent:#B0476B; --accent-ink:#FFFFFF; --soft:#F6E7EC;
+  --display:"Fraunces",Georgia,serif; --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --radius:18px; --caps:0.02em;
+  --shb:#073C6D; --shb2:#11979D;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;transition:background .3s,color .3s}
+a{color:inherit}
+button,input,textarea,select{font:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:var(--caps)}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* barre de démonstration SHB */
+.demo{background:var(--shb);color:#fff;font-family:"Manrope",system-ui,sans-serif;position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.demo .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-block:10px}
+.demo .tag{font-size:.8rem;opacity:.9}
+.demo .tag b{color:#8FE0E3}
+.demo .back{font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tabs button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:#fff;color:var(--shb);border-color:#fff;font-weight:700}
+
+/* en-tête du site client */
+.site-head{border-bottom:1px solid var(--line);background:var(--surface)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--display);font-size:1.35rem;font-weight:600;letter-spacing:var(--caps)}
+.brand small{display:block;font-family:var(--body);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:20px;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--muted)} .nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font-size:.95rem}
+.btn.fill{background:var(--accent);color:var(--accent-ink)}
+.btn.line{background:transparent;color:var(--accent)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding-block:56px 48px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;margin-top:12px}
+.hero p.lead{color:var(--muted);font-size:1.08rem;margin-top:16px;max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:.92rem;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#2E9E5B;box-shadow:0 0 0 4px rgba(46,158,91,.18)}
+.dot.closed{background:#C0473A;box-shadow:0 0 0 4px rgba(192,71,58,.18)}
+.visual{aspect-ratio:4/5;max-width:100%;border-radius:calc(var(--radius) + 6px);position:relative;overflow:hidden;background:var(--soft)}
+.visual svg,.visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visual .cap{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.9);color:#333;font-size:.75rem;padding:5px 10px;border-radius:999px}
+
+/* sections */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+.sec-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.sec-title h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600}
+.sec-title p{color:var(--muted);max-width:30em}
+.offer{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.item b{font-weight:600}
+.item span.d{display:block;color:var(--muted);font-size:.88rem}
+.item .price{font-family:var(--display);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ph{aspect-ratio:1;max-width:100%;border-radius:var(--radius);position:relative;overflow:hidden}
+.ph svg,.ph img{width:100%;height:100%;display:block;object-fit:cover}
+.ph span{position:absolute;left:10px;bottom:10px;font-size:.72rem;background:rgba(255,255,255,.88);color:#333;padding:3px 9px;border-radius:999px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{font-size:1.25rem;font-weight:600;margin-bottom:12px}
+table.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+table.hours td{padding:7px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+table.hours td:last-child{text-align:right;color:var(--muted)}
+table.hours tr.today td{font-weight:700;color:var(--ink)}
+.map{margin-top:14px;aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;background:var(--soft)}
+.map svg{width:100%;height:100%;display:block}
+.reviews{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--soft);border-radius:var(--radius);padding:18px 22px;margin-top:24px}
+.reviews .stars{font-family:var(--display);font-size:1.6rem;font-weight:600}
+.reviews p{color:var(--muted);font-size:.92rem}
+form{display:grid;gap:12px}
+label{font-size:.85rem;font-weight:600}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff;color:#222}
+textarea{min-height:96px;resize:vertical}
+.form-note{font-size:.85rem;color:var(--muted)}
+.ok{display:none;background:var(--soft);border-radius:10px;padding:10px 12px;font-size:.9rem}
+.site-foot{border-top:1px solid var(--line);padding-block:28px;font-size:.85rem;color:var(--muted)}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:15;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* bandeau SHB en bas */
+.shb{background:#EAF4F6;color:#0B2238;padding-block:36px;font-family:"Manrope",system-ui,sans-serif}
+.shb .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.shb h2{font-family:"Manrope",system-ui,sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:0;color:#073C6D}
+.shb ul{margin:10px 0 0;padding-left:1.1em;color:#34475A;font-size:.95rem}
+.shb .price{background:#fff;border-radius:16px;padding:20px;border:1px solid #CFE3E7}
+.shb .price b{display:block;font-size:2rem;color:#073C6D}
+.shb .price small{color:#4A5B6B}
+
+@media (max-width:860px){
+  .hero .wrap,.info,.shb .wrap{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+  .visual{aspect-ratio:16/11}
+  .tabs{margin-left:0}
+  .site-head .btn{display:none}
+  .demo{position:static}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}body{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="demo"><div class="wrap">
+  <a class="tag back" href="#" id="back" style="text-decoration:none">← Catálogo</a><span class="tag"><b>Web de demostración</b> · SHB CONSEIL · empresa ficticia</span>
+  <div class="tabs" role="group" aria-label="Elegir un sector">
+    <button type="button" data-k="coiffure" aria-pressed="true">Peluquería</button>
+    <button type="button" data-k="resto" aria-pressed="false">Restaurante</button>
+    <button type="button" data-k="boulangerie" aria-pressed="false">Panadería</button>
+    <button type="button" data-k="artisan" aria-pressed="false">Artesano</button>
+  </div>
+</div></div>
+
+<header class="site-head"><div class="wrap">
+  <div class="brand" id="brand">Atelier Lumière<small id="brandSub">Peluquería · París (distrito 11)</small></div>
+  <nav class="nav" aria-label="Menú del sitio"><a href="#offre" id="navOffer">Servicios</a><a href="#galerie">Galería</a><a href="#infos">Horarios &amp; acceso</a><a href="#contact">Contacto</a></nav>
+  <a class="btn fill" id="headCta" href="#contact">Pedir cita</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow" id="eyebrow">Peluquería</span>
+    <h1 id="title">Cortes cuidados, en un ambiente tranquilo.</h1>
+    <p class="lead" id="lead">Corte, color y tratamientos para mujeres y hombres, con cita previa o sin cita según disponibilidad.</p>
+    <div class="cta">
+      <a class="btn fill" id="cta1" href="#contact">Pedir cita</a>
+      <a class="btn line" href="tel:+33100000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Llamar</a>
+    </div>
+    <div class="status" id="status" aria-live="polite"><span class="dot"></span><span>Abierto ahora</span></div>
+  </div>
+  <div class="visual" id="heroVisual" role="img" aria-label="Espacio para la foto principal"></div>
+</div></section>
+
+<section class="block" id="offre"><div class="wrap">
+  <div class="sec-title"><h2 id="offerTitle">Servicios &amp; precios</h2><p id="offerNote">Precios orientativos, mostrados con claridad para que sus clientes sepan qué esperar.</p></div>
+  <div class="offer" id="offer"></div>
+</div></section>
+
+<section class="block" id="galerie"><div class="wrap">
+  <div class="sec-title"><h2>Galería</h2><p>Sus trabajos, su local, su equipo. Fotos de ejemplo, que se sustituyen por las suyas.</p></div>
+  <div class="gallery" id="gallery"></div>
+</div></section>
+
+<section class="block" id="infos"><div class="wrap">
+  <div class="info">
+    <div class="card">
+      <h3>Horarios</h3>
+      <table class="hours" id="hours"></table>
+      <div class="reviews"><span class="stars" id="stars">★★★★★</span><p>Sus reseñas de Google aparecen aquí, vinculadas a la ficha de su establecimiento.</p></div>
+    </div>
+    <div class="card">
+      <h3>Cómo llegar</h3>
+      <p id="address">12 rue de l'Exemple, 75011 Paris</p>
+      <p class="form-note" id="transport">Metro Parmentier (línea 3) · a 3 minutos a pie</p>
+      <div class="map" role="img" aria-label="Espacio para el mapa de Google Maps">
+        <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice"><rect width="320" height="180" fill="#EEF1EC"/><g stroke="#FFFFFF" stroke-width="10"><path d="M0 60 H320"/><path d="M0 130 H320"/><path d="M90 0 V180"/><path d="M220 0 V180"/></g><g stroke="#DDE3DA" stroke-width="3"><path d="M0 95 H320"/><path d="M155 0 V180"/></g><path d="M40 20 L140 160" stroke="#FFFFFF" stroke-width="7"/><circle cx="162" cy="92" r="9" fill="var(--accent)"/><circle cx="162" cy="92" r="3.5" fill="#fff"/></svg>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="contact"><div class="wrap">
+  <div class="info">
+    <div>
+      <div class="sec-title" style="margin-bottom:12px"><h2 id="contactTitle">Pedir cita</h2></div>
+      <p class="form-note" id="contactNote">Deje sus datos: el salón le llamará para confirmar. También puede reservar online o escribir por WhatsApp.</p>
+    </div>
+    <form class="card" id="form" novalidate>
+      <div><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name" placeholder="Su nombre"></div>
+      <div><label for="f-tel">Teléfono</label><input id="f-tel" name="tel" inputmode="tel" autocomplete="tel" placeholder="06 00 00 00 00"></div>
+      <div><label for="f-msg" id="msgLabel">Su solicitud</label><textarea id="f-msg" name="msg" placeholder="Ej.: corte de mujer el sábado por la mañana"></textarea></div>
+      <button class="btn fill" type="submit" id="formBtn">Enviar la solicitud</button>
+      <p class="ok" id="ok" role="status">Demostración: en la web real, su solicitud llega directamente por correo electrónico al comercio.</p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-foot"><div class="wrap"><span id="footName">© Atelier Lumière</span><span>Aviso legal · Fotos de ejemplo: Unsplash · Web realizada por SHB CONSEIL</span></div></footer>
+
+<section class="shb" aria-label="Oferta SHB CONSEIL"><div class="wrap">
+  <div>
+    <h2>Esta web puede ser la suya, con sus textos, sus fotos y sus horarios.</h2>
+    <ul>
+      <li>Web de una página adaptada al móvil, con su propio dominio</li>
+      <li>Horarios, cómo llegar, botón de llamada y WhatsApp</li>
+      <li>Formulario de contacto, enlace de reserva o menú online según su actividad</li>
+      <li>Dominio y alojamiento incluidos el primer año</li>
+    </ul>
+  </div>
+  <div class="price"><small>Pack Digital Start — precio de lanzamiento</small><b>490 €</b><small>en lugar de 690 € · entrega en 7 días hábiles tras recibir sus contenidos · IVA no aplicable, art. 293 B del Código General de Impuestos francés (CGI)</small><p style="margin-top:10px;font-weight:700;color:#073C6D">SHB CONSEIL · +33 7 59 83 66 20 · shbconseilei@gmail.com</p></div>
+</div></section>
+
+<a class="wa" href="#contact" aria-label="Escribir por WhatsApp (demostración)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
+
+<script>
+const PH={"coiffure": ["/img/398a0bb0b1.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"]};
+const S={
+ coiffure:{css:{"--bg":"#FBF7F3","--surface":"#FFFFFF","--ink":"#2A1F1C","--muted":"#6E5F59","--line":"#EADFD7","--accent":"#B0476B","--accent-ink":"#FFFFFF","--soft":"#F6E7EC","--display":'"Fraunces",Georgia,serif',"--radius":"18px","--caps":"0.01em"},
+  brand:"Atelier Lumière",sub:"Peluquería · París (distrito 11)",eyebrow:"Peluquería",title:"Cortes cuidados, en un ambiente tranquilo.",
+  lead:"Corte, color y tratamientos para mujeres y hombres, con cita previa o sin cita según disponibilidad.",cta:"Pedir cita",nav:"Servicios",
+  offerTitle:"Servicios & precios",
+  offer:[["Corte de mujer","lavado, corte y secado","45 €"],["Corte de hombre","lavado, corte y peinado","28 €"],["Color","raíces o completo","desde 55 €"],["Mechas balayage","según el largo","desde 90 €"],["Tratamiento intensivo","mascarilla y masaje capilar","20 €"],["Corte infantil","menores de 12 años","18 €"]],
+  gallery:["Corte","Color","El salón","El equipo"],hours:[["Lunes",null],["Martes",[9.5,19]],["Miércoles",[9.5,19]],["Jueves",[9.5,20]],["Viernes",[9.5,20]],["Sábado",[9,18]],["Domingo",null]],
+  address:"12 rue de l'Exemple, 75011 Paris",transport:"Metro Parmentier (línea 3) · a 3 minutos a pie",contactTitle:"Pedir cita",
+  contactNote:"Deje sus datos: el salón le llamará para confirmar. También puede reservar online o escribir por WhatsApp.",msg:"Ej.: corte de mujer el sábado por la mañana",hue:[330,20]},
+ resto:{css:{"--bg":"#F7F4EC","--surface":"#FFFDF8","--ink":"#1F2A22","--muted":"#5E6B5F","--line":"#E2DDCD","--accent":"#2F5D46","--accent-ink":"#FFFFFF","--soft":"#E9EEDF","--display":'"Fraunces",Georgia,serif',"--radius":"6px","--caps":"0"},
+  brand:"Chez Margaux",sub:"Bistró de barrio · Lyon (distrito 1)",eyebrow:"Bistró · cocina de mercado",title:"Una carta corta que cambia con el mercado.",
+  lead:"Comidas y cenas de martes a sábado. Productos frescos, vinos de pequeños productores y terraza cuando hace buen tiempo.",cta:"Reservar mesa",nav:"La carta",
+  offerTitle:"La carta del momento",
+  offer:[["Crema de calabaza","semillas tostadas, nata fresca","9 €"],["Huevo a baja temperatura","setas, jugo de ave","11 €"],["Pescado del día","verduras de temporada","22 €"],["Carrillera de ternera estofada","puré casero","21 €"],["Tarta fina de manzana","caramelo de mantequilla salada","8 €"],["Menú del día","entrante + principal o principal + postre","19 €"]],
+  gallery:["El comedor","Plato del día","Terraza","En la cocina"],hours:[["Lunes",null],["Martes",[12,22.5]],["Miércoles",[12,22.5]],["Jueves",[12,22.5]],["Viernes",[12,23]],["Sábado",[12,23]],["Domingo",null]],
+  address:"4 place de l'Exemple, 69001 Lyon",transport:"Metro Hôtel de Ville (línea A) · a 5 minutos a pie",contactTitle:"Reservar mesa",
+  contactNote:"Indique el día, la hora y el número de personas: el restaurante le confirmará por teléfono. La reserva online también puede conectarse con la herramienta que ya utiliza.",msg:"Ej.: 4 personas el viernes a las 20:00",hue:[120,45]},
+ boulangerie:{css:{"--bg":"#FFF8EE","--surface":"#FFFFFF","--ink":"#3B2412","--muted":"#7A6150","--line":"#F0E0C9","--accent":"#C1661C","--accent-ink":"#FFFFFF","--soft":"#FBEBD3","--display":'"Fraunces",Georgia,serif',"--radius":"24px","--caps":"0"},
+  brand:"Au Pain Doré",sub:"Panadería · Pastelería · Nantes",eyebrow:"Panadería artesanal",title:"Pan de masa madre, horneado aquí cada mañana.",
+  lead:"Panes, bollería y pasteles caseros. Encargue sus tartas de cumpleaños y sus bandejas para el fin de semana.",cta:"Encargar una tarta",nav:"Nuestros productos",
+  offerTitle:"Nuestros productos",
+  offer:[["Baguette tradicional","harina Label Rouge","1,30 €"],["Pan de masa madre","750 g, cocido en suela de piedra","4,80 €"],["Croissant de mantequilla","","1,40 €"],["Flan pâtissier","la porción","3,20 €"],["Tarta de frutas","6 personas, por encargo","22 €"],["Bandeja de desayuno","10 piezas de bollería","13 €"]],
+  gallery:["El horno","Bollería","Pastelería","La tienda"],hours:[["Lunes",[7,19.5]],["Martes",[7,19.5]],["Miércoles",null],["Jueves",[7,19.5]],["Viernes",[7,19.5]],["Sábado",[7,19.5]],["Domingo",[7,13]]],
+  address:"27 rue de l'Exemple, 44000 Nantes",transport:"Tranvía Commerce (línea 1) · aparcamiento rápido frente a la tienda",contactTitle:"Encargar por adelantado",
+  contactNote:"Tartas, piezas de celebración y bandejas: indique la fecha de recogida y la panadería le llamará para confirmar.",msg:"Ej.: tarta de fresas de 8 porciones para el sábado a las 11:00",hue:[30,40]},
+ artisan:{css:{"--bg":"#F4F6F8","--surface":"#FFFFFF","--ink":"#16212B","--muted":"#56636F","--line":"#DCE2E8","--accent":"#1F5FA8","--accent-ink":"#FFFFFF","--soft":"#E4ECF5","--display":'"Oswald","Arial Narrow",sans-serif',"--radius":"8px","--caps":"0.02em"},
+  brand:"Martin Rénovation",sub:"Fontanería · Electricidad · Baño",eyebrow:"Artesano · Toulouse y alrededores",title:"Fontanería, electricidad y reformas, con un presupuesto claro.",
+  lead:"Trabajamos en Toulouse y en un radio de 20 km. Presupuesto gratuito y detallado antes de cualquier obra.",cta:"Pedir presupuesto",nav:"Servicios",
+  offerTitle:"Servicios",
+  offer:[["Reparación de fugas","localización y reparación","según presupuesto"],["Sustitución de termo eléctrico","suministro e instalación","según presupuesto"],["Baño llave en mano","ducha, mueble, azulejos","según presupuesto"],["Mantenimiento de caldera","se entrega certificado","desde 110 €"],["Adecuación de la instalación eléctrica a la normativa","cuadro, enchufes, iluminación","según presupuesto"],["Zona de trabajo","Toulouse + 20 km","desplazamiento incluido"]],
+  gallery:["Baño","Fontanería","Electricidad","Reformas"],hours:[["Lunes",[8,18]],["Martes",[8,18]],["Miércoles",[8,18]],["Jueves",[8,18]],["Viernes",[8,17]],["Sábado",null],["Domingo",null]],
+  address:"Toulouse y municipios cercanos (radio de 20 km)",transport:"Servicio a domicilio · respuesta en 24 h hábiles",contactTitle:"Pedir presupuesto",
+  contactNote:"Describa su necesidad y añada una foto si es posible: el artesano le llamará para fijar una cita y preparar el presupuesto.",msg:"Ej.: sustitución de un termo eléctrico de 200 L",hue:[210,190]}
+};
+const T_CAP="Foto de ejemplo · sus fotos la sustituyen";
+const LANG=document.documentElement.lang;
+const $=id=>document.getElementById(id);
+const fmt=h=>{const H=Math.floor(h),M=Math.round((h-H)*60);return LANG==="fr"?H+" h"+(M?String(M).padStart(2,"0"):""):H+":"+String(M).padStart(2,"0")};
+function art(h1,h2,label,i){ // illustration abstraite en attendant les photos du client
+  const a=`hsl(${h1} 45% ${70-i*4}%)`,b=`hsl(${h2} 55% ${82-i*3}%)`,c=`hsl(${h1} 35% ${55-i*3}%)`;
+  return `<svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g${i}${h1}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient></defs><rect width="200" height="200" fill="url(#g${i}${h1})"/><circle cx="${60+i*25}" cy="${70+i*10}" r="${46-i*4}" fill="${c}" opacity=".35"/><rect x="${20+i*8}" y="${120-i*6}" width="${110+i*6}" height="70" rx="14" fill="#fff" opacity=".25"/></svg>`;
+}
+function render(k){
+  const d=S[k];
+  for(const [p,v] of Object.entries(d.css)) document.documentElement.style.setProperty(p,v);
+  $("brand").firstChild.nodeValue=d.brand; $("brandSub").textContent=d.sub; $("eyebrow").textContent=d.eyebrow; $("title").textContent=d.title; $("lead").textContent=d.lead;
+  $("headCta").textContent=d.cta; $("cta1").textContent=d.cta; $("navOffer").textContent=d.nav; $("offerTitle").textContent=d.offerTitle;
+  $("offer").innerHTML=d.offer.map(([n,s,p])=>`<div class="item"><div><b>${n}</b>${s?`<span class="d">${s}</span>`:""}</div><span class="price">${p}</span></div>`).join("");
+  $("gallery").innerHTML=d.gallery.map((g,i)=>`<div class="ph"><img src="${PH[k][i+1]}" alt="${g}" loading="lazy"><span>${g}</span></div>`).join("");
+  $("heroVisual").innerHTML=`<img src="${PH[k][0]}" alt="${d.eyebrow}"><span class="cap">${T_CAP}</span>`;
+  const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Paris"})); const wd=(now.getDay()+6)%7; const hr=now.getHours()+now.getMinutes()/60;
+  $("hours").innerHTML=d.hours.map(([j,h],i)=>`<tr class="${i===wd?"today":""}"><td>${j}${i===wd?" (hoy)":""}</td><td>${h?fmt(h[0])+" – "+fmt(h[1]):"Cerrado"}</td></tr>`).join("");
+  const t=d.hours[wd][1]; const open=t&&hr>=t[0]&&hr<t[1];
+  $("status").innerHTML=`<span class="dot ${open?"":"closed"}"></span><span>${open?"Abierto ahora · hasta las "+fmt(t[1]):"Cerrado ahora"}</span>`;
+  $("address").textContent=d.address; $("transport").textContent=d.transport; $("contactTitle").textContent=d.contactTitle; $("contactNote").textContent=d.contactNote;
+  $("f-msg").placeholder=d.msg; $("formBtn").textContent=k==="artisan"?"Enviar mi solicitud de presupuesto":"Enviar la solicitud"; $("footName").textContent="© "+d.brand;
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
+  $("ok").style.display="none";
+  try{localStorage.setItem("demo-sector",k)}catch(e){}
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.k)));
+$("form").addEventListener("submit",e=>{e.preventDefault();$("ok").style.display="block";});
+let start="coiffure"; try{const s=localStorage.getItem("demo-sector"); if(s&&S[s]) start=s;}catch(e){}
+const h=location.hash.slice(1); if(S[h]) start=h;
+window.addEventListener("hashchange",()=>{const x=location.hash.slice(1); if(S[x]) render(x);});
+$("back").addEventListener("click",e=>{e.preventDefault(); if(history.length>1) history.back(); else location.href="./";});
+render(start);
+</script>
+
+</body>
+</html>
