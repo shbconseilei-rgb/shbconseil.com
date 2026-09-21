@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عرض توضيحي لموقع تعريفي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&family=Oswald:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBF7F3; --surface:#FFFFFF; --ink:#2A1F1C; --muted:#6E5F59; --line:#EADFD7;
+  --accent:#B0476B; --accent-ink:#FFFFFF; --soft:#F6E7EC;
+  --display:"Cairo","Fraunces",Georgia,serif; --body:"Cairo","Manrope","Segoe UI",system-ui,sans-serif;
+  --radius:18px; --caps:0.02em;
+  --shb:#073C6D; --shb2:#11979D;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;transition:background .3s,color .3s}
+a{color:inherit}
+button,input,textarea,select{font:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:var(--caps)}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* barre de démonstration SHB */
+.demo{background:var(--shb);color:#fff;font-family:"Cairo","Manrope",system-ui,sans-serif;position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.demo .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-block:10px}
+.demo .tag{font-size:.8rem;opacity:.9}
+.demo .tag b{color:#8FE0E3}
+.demo .back{font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tabs button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:#fff;color:var(--shb);border-color:#fff;font-weight:700}
+
+/* en-tête du site client */
+.site-head{border-bottom:1px solid var(--line);background:var(--surface)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--display);font-size:1.35rem;font-weight:600;letter-spacing:var(--caps)}
+.brand small{display:block;font-family:var(--body);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:20px;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--muted)} .nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font-size:.95rem}
+.btn.fill{background:var(--accent);color:var(--accent-ink)}
+.btn.line{background:transparent;color:var(--accent)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding-block:56px 48px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;margin-top:12px}
+.hero p.lead{color:var(--muted);font-size:1.08rem;margin-top:16px;max-width:32em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:.92rem;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#2E9E5B;box-shadow:0 0 0 4px rgba(46,158,91,.18)}
+.dot.closed{background:#C0473A;box-shadow:0 0 0 4px rgba(192,71,58,.18)}
+.visual{aspect-ratio:4/5;max-width:100%;border-radius:calc(var(--radius) + 6px);position:relative;overflow:hidden;background:var(--soft)}
+.visual svg,.visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visual .cap{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.9);color:#333;font-size:.75rem;padding:5px 10px;border-radius:999px}
+
+/* sections */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+.sec-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.sec-title h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600}
+.sec-title p{color:var(--muted);max-width:30em}
+.offer{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.item b{font-weight:600}
+.item span.d{display:block;color:var(--muted);font-size:.88rem}
+.item .price{font-family:var(--display);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ph{aspect-ratio:1;max-width:100%;border-radius:var(--radius);position:relative;overflow:hidden}
+.ph svg,.ph img{width:100%;height:100%;display:block;object-fit:cover}
+.ph span{position:absolute;left:10px;bottom:10px;font-size:.72rem;background:rgba(255,255,255,.88);color:#333;padding:3px 9px;border-radius:999px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{font-size:1.25rem;font-weight:600;margin-bottom:12px}
+table.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+table.hours td{padding:7px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+table.hours td:last-child{text-align:right;color:var(--muted)}
+table.hours tr.today td{font-weight:700;color:var(--ink)}
+.map{margin-top:14px;aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;background:var(--soft)}
+.map svg{width:100%;height:100%;display:block}
+.reviews{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--soft);border-radius:var(--radius);padding:18px 22px;margin-top:24px}
+.reviews .stars{font-family:var(--display);font-size:1.6rem;font-weight:600}
+.reviews p{color:var(--muted);font-size:.92rem}
+form{display:grid;gap:12px}
+label{font-size:.85rem;font-weight:600}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff;color:#222}
+textarea{min-height:96px;resize:vertical}
+.form-note{font-size:.85rem;color:var(--muted)}
+.ok{display:none;background:var(--soft);border-radius:10px;padding:10px 12px;font-size:.9rem}
+.site-foot{border-top:1px solid var(--line);padding-block:28px;font-size:.85rem;color:var(--muted)}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:15;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* bandeau SHB en bas */
+.shb{background:#EAF4F6;color:#0B2238;padding-block:36px;font-family:"Cairo","Manrope",system-ui,sans-serif}
+.shb .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.shb h2{font-family:"Cairo","Manrope",system-ui,sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:0;color:#073C6D}
+.shb ul{margin:10px 0 0;padding-left:1.1em;color:#34475A;font-size:.95rem}
+.shb .price{background:#fff;border-radius:16px;padding:20px;border:1px solid #CFE3E7}
+.shb .price b{display:block;font-size:2rem;color:#073C6D}
+.shb .price small{color:#4A5B6B}
+
+@media (max-width:860px){
+  .hero .wrap,.info,.shb .wrap{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+  .visual{aspect-ratio:16/11}
+  .tabs{margin-left:0}
+  .site-head .btn{display:none}
+  .demo{position:static}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}body{transition:none}}
+html[dir=rtl] ul{padding-left:0;padding-right:1.1em}
+</style>
+
+</head>
+<body>
+<div class="demo"><div class="wrap">
+  <a class="tag back" href="#" id="back" style="text-decoration:none">→ الكتالوج</a><span class="tag"><b>موقع توضيحي</b> · SHB CONSEIL · شركة افتراضية</span>
+  <div class="tabs" role="group" aria-label="اختر قطاعًا">
+    <button type="button" data-k="coiffure" aria-pressed="true">صالون تصفيف شعر</button>
+    <button type="button" data-k="resto" aria-pressed="false">مطعم</button>
+    <button type="button" data-k="boulangerie" aria-pressed="false">مخبز</button>
+    <button type="button" data-k="artisan" aria-pressed="false">حرفي</button>
+  </div>
+</div></div>
+
+<header class="site-head"><div class="wrap">
+  <div class="brand" id="brand">Atelier Lumière<small id="brandSub">تصفيف شعر · باريس الدائرة 11</small></div>
+  <nav class="nav" aria-label="قائمة الموقع"><a href="#offre" id="navOffer">الخدمات</a><a href="#galerie">معرض الصور</a><a href="#infos">مواعيد العمل وطريقة الوصول</a><a href="#contact">اتصل بنا</a></nav>
+  <a class="btn fill" id="headCta" href="#contact">احجز موعدًا</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow" id="eyebrow">صالون تصفيف شعر</span>
+    <h1 id="title">قصّات متقنة في أجواء هادئة.</h1>
+    <p class="lead" id="lead">قصّ وصبغ وعناية بالشعر للنساء والرجال، بموعد مسبق أو دون موعد حسب التوفّر.</p>
+    <div class="cta">
+      <a class="btn fill" id="cta1" href="#contact">احجز موعدًا</a>
+      <a class="btn line" href="tel:+33100000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>اتصل</a>
+    </div>
+    <div class="status" id="status" aria-live="polite"><span class="dot"></span><span>مفتوح الآن</span></div>
+  </div>
+  <div class="visual" id="heroVisual" role="img" aria-label="مكان الصورة الرئيسية"></div>
+</div></section>
+
+<section class="block" id="offre"><div class="wrap">
+  <div class="sec-title"><h2 id="offerTitle">الخدمات والأسعار</h2><p id="offerNote">أسعار استرشادية، معروضة بوضوح ليعرف عملاؤك ما يمكن توقّعه.</p></div>
+  <div class="offer" id="offer"></div>
+</div></section>
+
+<section class="block" id="galerie"><div class="wrap">
+  <div class="sec-title"><h2>معرض الصور</h2><p>أعمالك ومكانك وفريقك. صور توضيحية تُستبدل بصورك.</p></div>
+  <div class="gallery" id="gallery"></div>
+</div></section>
+
+<section class="block" id="infos"><div class="wrap">
+  <div class="info">
+    <div class="card">
+      <h3>مواعيد العمل</h3>
+      <table class="hours" id="hours"></table>
+      <div class="reviews"><span class="stars" id="stars">★★★★★</span><p>تظهر تقييماتك على Google هنا، مرتبطة بملف مؤسستك.</p></div>
+    </div>
+    <div class="card">
+      <h3>طريقة الوصول</h3>
+      <p id="address">12 rue de l'Exemple, 75011 Paris</p>
+      <p class="form-note" id="transport">مترو Parmentier (الخط 3) · 3 دقائق سيرًا على الأقدام</p>
+      <div class="map" role="img" aria-label="مكان خريطة Google Maps">
+        <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice"><rect width="320" height="180" fill="#EEF1EC"/><g stroke="#FFFFFF" stroke-width="10"><path d="M0 60 H320"/><path d="M0 130 H320"/><path d="M90 0 V180"/><path d="M220 0 V180"/></g><g stroke="#DDE3DA" stroke-width="3"><path d="M0 95 H320"/><path d="M155 0 V180"/></g><path d="M40 20 L140 160" stroke="#FFFFFF" stroke-width="7"/><circle cx="162" cy="92" r="9" fill="var(--accent)"/><circle cx="162" cy="92" r="3.5" fill="#fff"/></svg>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="contact"><div class="wrap">
+  <div class="info">
+    <div>
+      <div class="sec-title" style="margin-bottom:12px"><h2 id="contactTitle">احجز موعدًا</h2></div>
+      <p class="form-note" id="contactNote">اترك بياناتك: سيتصل بك الصالون للتأكيد. يمكنك أيضًا الحجز عبر الإنترنت أو المراسلة عبر WhatsApp.</p>
+    </div>
+    <form class="card" id="form" novalidate>
+      <div><label for="f-name">الاسم</label><input id="f-name" name="name" autocomplete="name" placeholder="اسمك"></div>
+      <div><label for="f-tel">الهاتف</label><input id="f-tel" name="tel" inputmode="tel" autocomplete="tel" placeholder="06 00 00 00 00"></div>
+      <div><label for="f-msg" id="msgLabel">طلبك</label><textarea id="f-msg" name="msg" placeholder="مثال: قصّ شعر نسائي صباح السبت"></textarea></div>
+      <button class="btn fill" type="submit" id="formBtn">إرسال الطلب</button>
+      <p class="ok" id="ok" role="status">عرض توضيحي: في الموقع الحقيقي، يصل طلبك مباشرة إلى صاحب المحل عبر البريد الإلكتروني.</p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-foot"><div class="wrap"><span id="footName">© Atelier Lumière</span><span>الإشعارات القانونية · صور توضيحية: Unsplash · موقع من إنجاز SHB CONSEIL</span></div></footer>
+
+<section class="shb" aria-label="عرض SHB CONSEIL"><div class="wrap">
+  <div>
+    <h2>يمكن أن يكون هذا الموقع موقعك، بنصوصك وصورك ومواعيد عملك.</h2>
+    <ul>
+      <li>موقع من صفحة واحدة متوافق مع الهاتف، باسم النطاق الخاص بك</li>
+      <li>مواعيد العمل، خريطة الوصول، زر الاتصال وWhatsApp</li>
+      <li>استمارة تواصل أو رابط حجز أو قائمة طعام على الإنترنت حسب نشاطك</li>
+      <li>اسم النطاق والاستضافة مشمولان في السنة الأولى</li>
+    </ul>
+  </div>
+  <div class="price"><small>Pack Digital Start — سعر الإطلاق</small><b>490 €</b><small>بدلًا من 690 € · التسليم خلال 7 أيام عمل بعد استلام محتواك · ضريبة القيمة المضافة غير مطبّقة، المادة 293 B من القانون العام للضرائب الفرنسي (CGI)</small><p style="margin-top:10px;font-weight:700;color:#073C6D">SHB CONSEIL · +33 7 59 83 66 20 · shbconseilei@gmail.com</p></div>
+</div></section>
+
+<a class="wa" href="#contact" aria-label="راسلنا عبر WhatsApp (عرض توضيحي)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
+
+<script>
+const PH={"coiffure": ["/img/398a0bb0b1.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"]};
+const S={
+ coiffure:{css:{"--bg":"#FBF7F3","--surface":"#FFFFFF","--ink":"#2A1F1C","--muted":"#6E5F59","--line":"#EADFD7","--accent":"#B0476B","--accent-ink":"#FFFFFF","--soft":"#F6E7EC","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"18px","--caps":"0.01em"},
+  brand:"Atelier Lumière",sub:"تصفيف شعر · باريس الدائرة 11",eyebrow:"صالون تصفيف شعر",title:"قصّات متقنة في أجواء هادئة.",
+  lead:"قصّ وصبغ وعناية بالشعر للنساء والرجال، بموعد مسبق أو دون موعد حسب التوفّر.",cta:"احجز موعدًا",nav:"الخدمات",
+  offerTitle:"الخدمات والأسعار",
+  offer:[["قصّ شعر نسائي","غسل، قصّ، تجفيف وتصفيف","45 €"],["قصّ شعر رجالي","غسل، قصّ، تصفيف","28 €"],["صبغ","الجذور أو كامل الشعر","ابتداءً من 55 €"],["بالاياج (Balayage)","حسب الطول","ابتداءً من 90 €"],["عناية عميقة","قناع وتدليك فروة الرأس","20 €"],["قصّ شعر للأطفال","أقل من 12 سنة","18 €"]],
+  gallery:["قصّ الشعر","صبغ","الصالون","الفريق"],hours:[["الاثنين",null],["الثلاثاء",[9.5,19]],["الأربعاء",[9.5,19]],["الخميس",[9.5,20]],["الجمعة",[9.5,20]],["السبت",[9,18]],["الأحد",null]],
+  address:"12 rue de l'Exemple, 75011 Paris",transport:"مترو Parmentier (الخط 3) · 3 دقائق سيرًا على الأقدام",contactTitle:"احجز موعدًا",
+  contactNote:"اترك بياناتك: سيتصل بك الصالون للتأكيد. يمكنك أيضًا الحجز عبر الإنترنت أو المراسلة عبر WhatsApp.",msg:"مثال: قصّ شعر نسائي صباح السبت",hue:[330,20]},
+ resto:{css:{"--bg":"#F7F4EC","--surface":"#FFFDF8","--ink":"#1F2A22","--muted":"#5E6B5F","--line":"#E2DDCD","--accent":"#2F5D46","--accent-ink":"#FFFFFF","--soft":"#E9EEDF","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"6px","--caps":"0"},
+  brand:"Chez Margaux",sub:"بيسترو الحي · ليون الدائرة 1",eyebrow:"بيسترو · مطبخ السوق",title:"قائمة قصيرة تتغيّر حسب ما يوفّره السوق.",
+  lead:"غداء وعشاء من الثلاثاء إلى السبت. منتجات طازجة، نبيذ من منتجين صغار، وتراس في الأيام المشمسة.",cta:"احجز طاولة",nav:"قائمة الطعام",
+  offerTitle:"قائمة الطعام الحالية",
+  offer:[["حساء اليقطين المخملي","بذور محمّصة، قشدة طازجة","9 €"],["بيضة مطهوة ببطء","فطر، مرق الدواجن","11 €"],["سمك اليوم","خضار موسمية","22 €"],["خدّ لحم بقري مطهو ببطء","بطاطس مهروسة منزلية","21 €"],["فطيرة التفاح الرقيقة","كراميل بالزبدة المملّحة","8 €"],["عرض الغداء","مقبّلات + طبق رئيسي أو طبق رئيسي + حلوى","19 €"]],
+  gallery:["القاعة","طبق اليوم","التراس","في المطبخ"],hours:[["الاثنين",null],["الثلاثاء",[12,22.5]],["الأربعاء",[12,22.5]],["الخميس",[12,22.5]],["الجمعة",[12,23]],["السبت",[12,23]],["الأحد",null]],
+  address:"4 place de l'Exemple, 69001 Lyon",transport:"مترو Hôtel de Ville (الخط A) · 5 دقائق سيرًا على الأقدام",contactTitle:"احجز طاولة",
+  contactNote:"حدّد اليوم والساعة وعدد الأشخاص: سيؤكّد المطعم الحجز هاتفيًا. ويمكن أيضًا ربط الحجز عبر الإنترنت بالأداة التي تستخدمها عادةً.",msg:"مثال: 4 أشخاص يوم الجمعة الساعة 20:00",hue:[120,45]},
+ boulangerie:{css:{"--bg":"#FFF8EE","--surface":"#FFFFFF","--ink":"#3B2412","--muted":"#7A6150","--line":"#F0E0C9","--accent":"#C1661C","--accent-ink":"#FFFFFF","--soft":"#FBEBD3","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"24px","--caps":"0"},
+  brand:"Au Pain Doré",sub:"مخبز · حلويات · نانت",eyebrow:"مخبز حِرفي",title:"خبز بالخميرة الطبيعية، يُخبز في المكان كل صباح.",
+  lead:"خبز ومعجنات وحلويات منزلية الصنع. اطلب كعكات أعياد الميلاد وصواني عطلة نهاية الأسبوع.",cta:"اطلب كعكة",nav:"منتجاتنا",
+  offerTitle:"منتجاتنا",
+  offer:[["باغيت تقليدية (baguette de tradition)","دقيق Label Rouge","1,30 €"],["خبز بالخميرة الطبيعية","750 غ، مخبوز على الحجر","4,80 €"],["كرواسون بالزبدة الخالصة","","1,40 €"],["فلان المعجنات (flan pâtissier)","للقطعة","3,20 €"],["تارت الفواكه","6 أشخاص، بالطلب المسبق","22 €"],["صينية الفطور","10 قطع من المعجنات","13 €"]],
+  gallery:["الفرن","المعجنات","الحلويات","المتجر"],hours:[["الاثنين",[7,19.5]],["الثلاثاء",[7,19.5]],["الأربعاء",null],["الخميس",[7,19.5]],["الجمعة",[7,19.5]],["السبت",[7,19.5]],["الأحد",[7,13]]],
+  address:"27 rue de l'Exemple, 44000 Nantes",transport:"ترام Commerce (الخط 1) · موقف قصير أمام المتجر",contactTitle:"اطلب مسبقًا",
+  contactNote:"كعكات وكعكات احتفالية وصوانٍ: حدّد تاريخ الاستلام، وسيتصل بك المخبز للتأكيد.",msg:"مثال: كعكة الفراولة 8 حصص ليوم السبت الساعة 11:00",hue:[30,40]},
+ artisan:{css:{"--bg":"#F4F6F8","--surface":"#FFFFFF","--ink":"#16212B","--muted":"#56636F","--line":"#DCE2E8","--accent":"#1F5FA8","--accent-ink":"#FFFFFF","--soft":"#E4ECF5","--display":'"Cairo","Oswald","Arial Narrow",sans-serif',"--radius":"8px","--caps":"0.02em"},
+  brand:"Martin Rénovation",sub:"سباكة · كهرباء · حمّامات",eyebrow:"حرفي · تولوز وضواحيها",title:"سباكة وكهرباء وترميم، مع عرض سعر واضح.",
+  lead:"نعمل في تولوز وضمن دائرة نصف قطرها 20 كم. عرض سعر مجاني ومفصّل قبل أي أعمال.",cta:"اطلب عرض سعر",nav:"الخدمات",
+  offerTitle:"الخدمات",
+  offer:[["إصلاح تسرّب","البحث عن التسرّب وإصلاحه","حسب عرض السعر"],["استبدال سخّان الماء","التوريد والتركيب","حسب عرض السعر"],["حمّام متكامل جاهز","دُش، أثاث، بلاط","حسب عرض السعر"],["صيانة الغلاية","مع شهادة صيانة","ابتداءً من 110 €"],["تحديث التمديدات الكهربائية وفق المعايير","اللوحة، المقابس، الإنارة","حسب عرض السعر"],["منطقة العمل","تولوز + 20 كم","التنقّل مشمول"]],
+  gallery:["حمّام","سباكة","كهرباء","ترميم"],hours:[["الاثنين",[8,18]],["الثلاثاء",[8,18]],["الأربعاء",[8,18]],["الخميس",[8,18]],["الجمعة",[8,17]],["السبت",null],["الأحد",null]],
+  address:"تولوز والبلديات المجاورة (دائرة نصف قطرها 20 كم)",transport:"تدخّل في المنزل · رد خلال 24 ساعة عمل",contactTitle:"اطلب عرض سعر",
+  contactNote:"صف احتياجك وأضف صورة إن أمكن: سيتصل بك الحرفي لتحديد موعد وإعداد عرض السعر.",msg:"مثال: استبدال سخّان ماء سعة 200 لتر",hue:[210,190]}
+};
+const T_CAP="صورة توضيحية · صورك تحلّ محلّها";
+const LANG=document.documentElement.lang;
+const $=id=>document.getElementById(id);
+const fmt=h=>{const H=Math.floor(h),M=Math.round((h-H)*60);return LANG==="fr"?H+" h"+(M?String(M).padStart(2,"0"):""):H+":"+String(M).padStart(2,"0")};
+function art(h1,h2,label,i){ // illustration abstraite en attendant les photos du client
+  const a=`hsl(${h1} 45% ${70-i*4}%)`,b=`hsl(${h2} 55% ${82-i*3}%)`,c=`hsl(${h1} 35% ${55-i*3}%)`;
+  return `<svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g${i}${h1}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient></defs><rect width="200" height="200" fill="url(#g${i}${h1})"/><circle cx="${60+i*25}" cy="${70+i*10}" r="${46-i*4}" fill="${c}" opacity=".35"/><rect x="${20+i*8}" y="${120-i*6}" width="${110+i*6}" height="70" rx="14" fill="#fff" opacity=".25"/></svg>`;
+}
+function render(k){
+  const d=S[k];
+  for(const [p,v] of Object.entries(d.css)) document.documentElement.style.setProperty(p,v);
+  $("brand").firstChild.nodeValue=d.brand; $("brandSub").textContent=d.sub; $("eyebrow").textContent=d.eyebrow; $("title").textContent=d.title; $("lead").textContent=d.lead;
+  $("headCta").textContent=d.cta; $("cta1").textContent=d.cta; $("navOffer").textContent=d.nav; $("offerTitle").textContent=d.offerTitle;
+  $("offer").innerHTML=d.offer.map(([n,s,p])=>`<div class="item"><div><b>${n}</b>${s?`<span class="d">${s}</span>`:""}</div><span class="price">${p}</span></div>`).join("");
+  $("gallery").innerHTML=d.gallery.map((g,i)=>`<div class="ph"><img src="${PH[k][i+1]}" alt="${g}" loading="lazy"><span>${g}</span></div>`).join("");
+  $("heroVisual").innerHTML=`<img src="${PH[k][0]}" alt="${d.eyebrow}"><span class="cap">${T_CAP}</span>`;
+  const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Paris"})); const wd=(now.getDay()+6)%7; const hr=now.getHours()+now.getMinutes()/60;
+  $("hours").innerHTML=d.hours.map(([j,h],i)=>`<tr class="${i===wd?"today":""}"><td>${j}${i===wd?" (اليوم)":""}</td><td>${h?fmt(h[0])+" – "+fmt(h[1]):"مغلق"}</td></tr>`).join("");
+  const t=d.hours[wd][1]; const open=t&&hr>=t[0]&&hr<t[1];
+  $("status").innerHTML=`<span class="dot ${open?"":"closed"}"></span><span>${open?"مفتوح الآن · حتى "+fmt(t[1]):"مغلق حاليًا"}</span>`;
+  $("address").textContent=d.address; $("transport").textContent=d.transport; $("contactTitle").textContent=d.contactTitle; $("contactNote").textContent=d.contactNote;
+  $("f-msg").placeholder=d.msg; $("formBtn").textContent=k==="artisan"?"إرسال طلب عرض السعر":"إرسال الطلب"; $("footName").textContent="© "+d.brand;
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
+  $("ok").style.display="none";
+  try{localStorage.setItem("demo-sector",k)}catch(e){}
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.k)));
+$("form").addEventListener("submit",e=>{e.preventDefault();$("ok").style.display="block";});
+let start="coiffure"; try{const s=localStorage.getItem("demo-sector"); if(s&&S[s]) start=s;}catch(e){}
+const h=location.hash.slice(1); if(S[h]) start=h;
+window.addEventListener("hashchange",()=>{const x=location.hash.slice(1); if(S[x]) render(x);});
+$("back").addEventListener("click",e=>{e.preventDefault(); if(history.length>1) history.back(); else location.href="./";});
+render(start);
+</script>
+
+</body>
+</html>
