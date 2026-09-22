@@ -33,7 +33,8 @@ p{margin:0}
 .demo .tag{font-size:.8rem;opacity:.9}
 .demo .tag b{color:#8FE0E3}
 .demo .back{font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;color:#fff}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tabs{display:flex;align-items:center;gap:8px;margin-left:auto}
+.tabs select{font:inherit;font-size:.9rem;font-weight:700;color:var(--shb);background:#fff;border:0;border-radius:999px;padding:7px 14px;max-width:100%}
 .tabs button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer}
 .tabs button[aria-pressed="true"]{background:#fff;color:var(--shb);border-color:#fff;font-weight:700}
 
@@ -126,12 +127,7 @@ textarea{min-height:96px;resize:vertical}
 <body>
 <div class="demo"><div class="wrap">
   <a class="tag back" href="#" id="back" style="text-decoration:none">← Catalogue</a><span class="tag"><b>Site de démonstration</b> · SHB CONSEIL · entreprise fictive</span>
-  <div class="tabs" role="group" aria-label="Choisir un secteur">
-    <button type="button" data-k="coiffure" aria-pressed="true">Salon de coiffure</button>
-    <button type="button" data-k="resto" aria-pressed="false">Restaurant</button>
-    <button type="button" data-k="boulangerie" aria-pressed="false">Boulangerie</button>
-    <button type="button" data-k="artisan" aria-pressed="false">Artisan</button>
-  </div>
+  <div class="tabs"><label for="sect" class="tag">Métier</label><select id="sect" aria-label="Choisir un secteur"><option value="coiffure">Salon de coiffure</option><option value="resto">Restaurant</option><option value="boulangerie">Boulangerie</option><option value="artisan">Artisan</option><option value="garage">Garage</option><option value="bienetre">Bien-être & sport</option><option value="gite">Gîte & chambres d'hôtes</option><option value="domicile">Services à domicile</option><option value="docteur">Cabinet médical</option><option value="photographe">Photographe</option><option value="immobilier">Agence immobilière</option><option value="traiteur">Traiteur & food truck</option></select></div>
 </div></div>
 
 <header class="site-head"><div class="wrap">
@@ -170,7 +166,7 @@ textarea{min-height:96px;resize:vertical}
     <div class="card">
       <h3>Horaires</h3>
       <table class="hours" id="hours"></table>
-      <div class="reviews"><span class="stars" id="stars">★★★★★</span><p>Vos avis Google s'affichent ici, reliés à votre fiche d'établissement.</p></div>
+      <div class="reviews" id="reviews"><span class="stars" id="stars">★★★★★</span><p>Vos avis Google s'affichent ici, reliés à votre fiche d'établissement.</p></div>
     </div>
     <div class="card">
       <h3>Accès</h3>
@@ -218,7 +214,7 @@ textarea{min-height:96px;resize:vertical}
 <a class="wa" href="#contact" aria-label="Écrire sur WhatsApp (démonstration)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
 
 <script>
-const PH={"coiffure": ["/img/398a0bb0b1.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"]};
+const PH={"coiffure": ["/img/coif-hero-2.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"], "garage": ["/img/220b4cd0a1.jpg", "/img/c69c52ac13.jpg", "/img/b6c850d05a.jpg", "/img/3502e54b99.jpg", "/img/cd714b0415.jpg"], "bienetre": ["/img/f2329d09c3.jpg", "/img/7daab776a3.jpg", "/img/d1441e0b37.jpg", "/img/8b442dc155.jpg", "/img/c5848d77d5.jpg"], "gite": ["/img/341598704e.jpg", "/img/9fcb87d7bf.jpg", "/img/e7858fdafd.jpg", "/img/79b346b085.jpg", "/img/a6207a5d48.jpg"], "domicile": ["/img/e600f42afe.jpg", "/img/ca9c043937.jpg", "/img/8e307ae1d1.jpg", "/img/655ddb9d36.jpg", "/img/feb57d5b22.jpg"], "photographe": ["/img/bcf8439889.jpg", "/img/ec6ea86866.jpg", "/img/f57aba4c0c.jpg", "/img/82ddc11a13.jpg", "/img/0c2406d451.jpg"], "immobilier": ["/img/a2b0aafcbe.jpg", "/img/7c75bb6787.jpg", "/img/aa76e0b945.jpg", "/img/c5fab289c5.jpg", "/img/21bc47ba21.jpg"], "traiteur": ["/img/90ba95cf6b.jpg", "/img/e04c774152.jpg", "/img/9b177e7438.jpg", "/img/773886b707.jpg", "/img/6e756a3ce1.jpg"], "docteur": ["/img/5e736e7cc7.jpg", "/img/0ce0c699cf.jpg", "/img/64b9ad10ed.jpg", "/img/6298565e12.jpg", "/img/fdebf04723.jpg"]};
 const S={
  coiffure:{css:{"--bg":"#FBF7F3","--surface":"#FFFFFF","--ink":"#2A1F1C","--muted":"#6E5F59","--line":"#EADFD7","--accent":"#B0476B","--accent-ink":"#FFFFFF","--soft":"#F6E7EC","--display":'"Fraunces",Georgia,serif',"--radius":"18px","--caps":"0.01em"},
   brand:"Atelier Lumière",sub:"Coiffure · Paris 11e",eyebrow:"Salon de coiffure",title:"Des coupes soignées, dans une ambiance calme.",
@@ -251,7 +247,71 @@ const S={
   offer:[["Dépannage fuite","recherche et réparation","sur devis"],["Remplacement chauffe-eau","fourniture et pose","sur devis"],["Salle de bain clé en main","douche, meuble, carrelage","sur devis"],["Entretien chaudière","attestation fournie","à partir de 110 €"],["Mise aux normes électriques","tableau, prises, éclairage","sur devis"],["Zone d'intervention","Toulouse + 20 km","déplacement inclus"]],
   gallery:["Salle de bain","Plomberie","Électricité","Rénovation"],hours:[["Lundi",[8,18]],["Mardi",[8,18]],["Mercredi",[8,18]],["Jeudi",[8,18]],["Vendredi",[8,17]],["Samedi",null],["Dimanche",null]],
   address:"Toulouse et communes voisines (rayon de 20 km)",transport:"Intervention à domicile · réponse sous 24 h ouvrées",contactTitle:"Demander un devis",
-  contactNote:"Décrivez votre besoin et ajoutez une photo si possible : l'artisan vous rappelle pour fixer un rendez-vous et établir le devis.",msg:"Ex. : remplacement d'un chauffe-eau de 200 L",hue:[210,190]}
+  contactNote:"Décrivez votre besoin et ajoutez une photo si possible : l'artisan vous rappelle pour fixer un rendez-vous et établir le devis.",msg:"Ex. : remplacement d'un chauffe-eau de 200 L",hue:[210,190]},
+ garage:{css:{"--bg":"#F3F4F5","--surface":"#FFFFFF","--ink":"#1B1F24","--muted":"#58606A","--line":"#DDE1E5","--accent":"#C4401B","--accent-ink":"#FFFFFF","--soft":"#F8E6DF","--display":'"Oswald","Arial Narrow",sans-serif',"--radius":"6px","--caps":"0.02em"},
+  brand:"Garage Moreau",sub:"Mécanique · Entretien · Pneus",eyebrow:"Garage automobile · Rennes",title:"Entretien et réparation, avec un devis avant chaque intervention.",
+  lead:"Révision, freins, pneus, climatisation et diagnostic toutes marques. Véhicule de courtoisie sur réservation.",cta:"Prendre rendez-vous",nav:"Prestations",
+  offerTitle:"Prestations & tarifs",
+  offer:[["Vidange + filtre","huile selon constructeur","à partir de 79 €"],["Plaquettes de frein","avant, pièces et main-d'œuvre","à partir de 120 €"],["Montage de pneus","équilibrage inclus, par pneu","15 €"],["Recharge climatisation","contrôle d'étanchéité","à partir de 69 €"],["Diagnostic électronique","lecture des codes défaut","49 €"],["Préparation au contrôle technique","vérification des points clés","sur devis"]],
+  gallery:["Mécanique","Pneus","Moteur","L'atelier"],hours:[["Lundi",[8,18.5]],["Mardi",[8,18.5]],["Mercredi",[8,18.5]],["Jeudi",[8,18.5]],["Vendredi",[8,18.5]],["Samedi",[8.5,12]],["Dimanche",null]],
+  address:"15 rue de l'Exemple, 35000 Rennes",transport:"Parking clients devant l'atelier · bus ligne C2",contactTitle:"Prendre rendez-vous",
+  contactNote:"Indiquez le modèle du véhicule et la prestation souhaitée : le garage vous rappelle avec un créneau et un devis.",msg:"Ex. : Clio 4, vidange + plaquettes avant",hue:[15,200]},
+ bienetre:{css:{"--bg":"#F4F6F2","--surface":"#FFFFFF","--ink":"#1F2A24","--muted":"#5B6A60","--line":"#DFE6DC","--accent":"#4F7A5E","--accent-ink":"#FFFFFF","--soft":"#E4EEE6","--display":'"Fraunces",Georgia,serif',"--radius":"20px","--caps":"0"},
+  brand:"Studio Équilibre",sub:"Yoga · Pilates · Coaching",eyebrow:"Studio de bien-être · Bordeaux",title:"Des séances en petit groupe, à votre rythme.",
+  lead:"Yoga, pilates et coaching individuel pour tous les niveaux. Première séance d'essai sur réservation.",cta:"Réserver une séance",nav:"Séances",
+  offerTitle:"Séances & tarifs",
+  offer:[["Cours collectif","yoga ou pilates, 1 h","15 €"],["Carte 10 cours","valable 6 mois","130 €"],["Coaching individuel","séance d'1 h","50 €"],["Massage bien-être","non médical, 1 h","60 €"],["Abonnement mensuel","cours illimités","69 €/mois"],["Séance d'essai","sur réservation","offerte"]],
+  gallery:["Coaching","Massage","Détente","Cours de yoga"],hours:[["Lundi",[7,21]],["Mardi",[7,21]],["Mercredi",[7,21]],["Jeudi",[7,21]],["Vendredi",[7,21]],["Samedi",[9,13]],["Dimanche",null]],
+  address:"8 cours de l'Exemple, 33000 Bordeaux",transport:"Tram B, arrêt Exemple · 2 minutes à pied",contactTitle:"Réserver une séance",
+  contactNote:"Choisissez le cours et le créneau : le studio confirme par SMS. La réservation en ligne peut aussi être reliée à votre planning.",msg:"Ex. : cours de pilates mardi 18 h",hue:[140,90]},
+ gite:{css:{"--bg":"#F7F4EE","--surface":"#FFFFFF","--ink":"#2B261E","--muted":"#6B6254","--line":"#E7DFD1","--accent":"#8A5A2B","--accent-ink":"#FFFFFF","--soft":"#F2E7D8","--display":'"Fraunces",Georgia,serif',"--radius":"14px","--caps":"0"},
+  brand:"Le Clos des Tilleuls",sub:"Gîte · Chambres d'hôtes · Dordogne",eyebrow:"Chambres d'hôtes à la campagne",title:"Trois chambres au calme, petit-déjeuner maison compris.",
+  lead:"À 10 minutes de Sarlat, au bord de la rivière. Jardin, parking privé et vélos à disposition.",cta:"Vérifier les disponibilités",nav:"Chambres",
+  offerTitle:"Chambres & tarifs",
+  offer:[["Chambre Tilleul","lit double, vue jardin","85 € / nuit"],["Chambre Rivière","lit double, vue sur l'eau","95 € / nuit"],["Suite Familiale","2 chambres, jusqu'à 4 personnes","140 € / nuit"],["Petit-déjeuner","fait maison","inclus"],["Table d'hôtes","le soir, sur réservation","28 € / pers."],["Taxe de séjour","selon la commune","en sus"]],
+  gallery:["Chambre Tilleul","Chambre Rivière","Le village","Suite Familiale"],hours:[["Lundi",[8,20]],["Mardi",[8,20]],["Mercredi",[8,20]],["Jeudi",[8,20]],["Vendredi",[8,20]],["Samedi",[8,20]],["Dimanche",[8,20]]],
+  address:"Lieu-dit l'Exemple, 24200 Sarlat-la-Canéda",transport:"Parking privé gratuit · gare de Sarlat à 10 minutes",contactTitle:"Demander une réservation",
+  contactNote:"Indiquez vos dates et le nombre de personnes : nous vous répondons sous 24 h. Un lien vers votre plateforme de réservation peut aussi être ajouté.",msg:"Ex. : 2 adultes, du 12 au 15 août",hue:[30,90]},
+ domicile:{css:{"--bg":"#F3F7F4","--surface":"#FFFFFF","--ink":"#17251C","--muted":"#56675B","--line":"#DAE5DD","--accent":"#2E7D4F","--accent-ink":"#FFFFFF","--soft":"#E1F0E6","--display":'"Oswald","Arial Narrow",sans-serif',"--radius":"10px","--caps":"0.02em"},
+  brand:"Net & Vert Services",sub:"Ménage · Jardinage · Petits travaux",eyebrow:"Services à domicile · Lille et environs",title:"Ménage, jardin et petits travaux, près de chez vous.",
+  lead:"Intervention ponctuelle ou régulière à Lille et dans un rayon de 15 km. Devis gratuit.",cta:"Demander un devis",nav:"Services",
+  offerTitle:"Services & tarifs",
+  offer:[["Ménage régulier","hebdomadaire ou tous les 15 jours","25 € / h"],["Grand ménage","printemps, fin de bail","sur devis"],["Taille de haies","évacuation des déchets verts","à partir de 45 € / h"],["Tonte de pelouse","jusqu'à 500 m²","à partir de 40 €"],["Petits travaux","montage de meubles, fixations","35 € / h"],["Zone d'intervention","Lille + 15 km","déplacement inclus"]],
+  gallery:["Ménage","Entretien","Jardin","Petits travaux"],hours:[["Lundi",[8,18]],["Mardi",[8,18]],["Mercredi",[8,18]],["Jeudi",[8,18]],["Vendredi",[8,18]],["Samedi",[9,12]],["Dimanche",null]],
+  address:"Lille et communes voisines (rayon de 15 km)",transport:"Intervention à domicile · réponse sous 24 h ouvrées",contactTitle:"Demander un devis",
+  contactNote:"Décrivez la prestation et la surface : nous vous rappelons pour fixer un rendez-vous et établir le devis.",msg:"Ex. : taille de 20 m de haies, fin mai",quote:true,hue:[140,60]},
+ docteur:{css:{"--bg":"#F4F8FA","--surface":"#FFFFFF","--ink":"#14263A","--muted":"#526275","--line":"#DCE6EE","--accent":"#1F6FA8","--accent-ink":"#FFFFFF","--soft":"#E2EEF7","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"12px","--caps":"0"},
+  brand:"Cabinet médical des Acacias",sub:"Médecine générale · Angers",eyebrow:"Cabinet de médecine générale",title:"Consultations sur rendez-vous, du lundi au samedi matin.",
+  lead:"Deux médecins généralistes conventionnés secteur 1. Carte Vitale acceptée.",cta:"Prendre rendez-vous",nav:"Informations",
+  offerTitle:"Consultations & honoraires",
+  offer:[["Consultation de médecine générale","médecins conventionnés secteur 1","tarif conventionnel"],["Consultation pour enfant","","tarif conventionnel"],["Visite à domicile","patients ne pouvant se déplacer","sur rendez-vous"],["Téléconsultation","patients suivis au cabinet","tarif conventionnel"],["Accès","de plain-pied, fauteuil roulant","accessible"],["Urgence en dehors des horaires","appelez le 15","—"]],
+  gallery:["Salle d'examen","Accueil","Consultation","Bureau"],hours:[["Lundi",[8.5,19]],["Mardi",[8.5,19]],["Mercredi",[8.5,19]],["Jeudi",[8.5,19]],["Vendredi",[8.5,19]],["Samedi",[8.5,12]],["Dimanche",null]],
+  address:"3 place de l'Exemple, 49000 Angers",transport:"Tram A, arrêt Exemple · parking à proximité",contactTitle:"Prendre rendez-vous",
+  contactNote:"Sur le vrai site, ce bouton renvoie vers le service de rendez-vous en ligne du cabinet. Aucune information médicale n'est demandée ici. Pour une urgence, appelez le 15.",msg:"Ex. : nouveau patient, premier rendez-vous",noReviews:true,hue:[205,190]},
+ photographe:{css:{"--bg":"#F5F4F2","--surface":"#FFFFFF","--ink":"#1D1B1A","--muted":"#625D59","--line":"#E4E0DB","--accent":"#7A4B8C","--accent-ink":"#FFFFFF","--soft":"#EEE5F1","--display":'"Fraunces",Georgia,serif',"--radius":"4px","--caps":"0"},
+  brand:"Atelier Lumen Photo",sub:"Portrait · Mariage · Produit",eyebrow:"Photographe · Marseille",title:"Des photos naturelles, pour vos moments et votre entreprise.",
+  lead:"Portraits, mariages, photos de produits et d'équipes. Studio en centre-ville ou déplacement dans la région.",cta:"Demander un devis",nav:"Formules",
+  offerTitle:"Formules & tarifs",
+  offer:[["Séance portrait","1 h en studio, 10 photos retouchées","150 €"],["Photos de famille","en extérieur, 1 h 30","220 €"],["Mariage","des préparatifs à la soirée","à partir de 1 200 €"],["Photos de produits","fond blanc, par lot de 10","120 €"],["Portraits d'équipe","sur votre lieu de travail","sur devis"],["Tirages","papier photo professionnel","à partir de 15 €"]],
+  gallery:["Reportage","Mariage","Couple","Studio"],hours:[["Lundi",null],["Mardi",[10,19]],["Mercredi",[10,19]],["Jeudi",[10,19]],["Vendredi",[10,19]],["Samedi",[10,19]],["Dimanche",null]],
+  address:"21 rue de l'Exemple, 13001 Marseille",transport:"Métro Vieux-Port · studio au rez-de-chaussée",contactTitle:"Demander un devis",
+  contactNote:"Indiquez le type de séance, la date et le lieu : le photographe vous répond avec une proposition.",msg:"Ex. : mariage le 14 juin, 80 invités, Aix-en-Provence",quote:true,hue:[280,20]},
+ immobilier:{css:{"--bg":"#F4F6F9","--surface":"#FFFFFF","--ink":"#172233","--muted":"#56627A","--line":"#DDE3EC","--accent":"#B0413E","--accent-ink":"#FFFFFF","--soft":"#F5E3E2","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"10px","--caps":"0"},
+  brand:"Exemple Immobilier",sub:"Transaction · Location · Gestion",eyebrow:"Agence immobilière · Montpellier",title:"Vendre, acheter ou louer, avec une agence de quartier.",
+  lead:"Estimation gratuite de votre bien, visites accompagnées et suivi jusqu'à la signature.",cta:"Demander une estimation",nav:"Nos biens",
+  offerTitle:"Biens à la une",
+  offer:[["Appartement T3","72 m², balcon, centre historique","285 000 €"],["Maison 5 pièces","130 m², jardin","465 000 €"],["Studio","24 m², proche tram","location 590 € / mois CC"],["Appartement T2","45 m², terrasse","198 000 €"],["Estimation de votre bien","réponse sous 48 h","gratuite"],["Honoraires","barème affiché en agence et sur le site","consultable"]],
+  gallery:["Séjour","Cuisine","Maison","Appartement"],hours:[["Lundi",[9,19]],["Mardi",[9,19]],["Mercredi",[9,19]],["Jeudi",[9,19]],["Vendredi",[9,19]],["Samedi",[9.5,17]],["Dimanche",null]],
+  address:"5 avenue de l'Exemple, 34000 Montpellier",transport:"Tram 1, arrêt Exemple · stationnement devant l'agence",contactTitle:"Demander une estimation",
+  contactNote:"Décrivez votre bien (type, surface, quartier) : un conseiller vous rappelle pour convenir d'une visite d'estimation.",msg:"Ex. : T3 de 70 m², quartier Antigone",hue:[0,210]},
+ traiteur:{css:{"--bg":"#FBF6F0","--surface":"#FFFFFF","--ink":"#2A1E16","--muted":"#6E5D50","--line":"#EFE2D4","--accent":"#B5542A","--accent-ink":"#FFFFFF","--soft":"#F7E4D8","--display":'"Fraunces",Georgia,serif',"--radius":"18px","--caps":"0"},
+  brand:"Saveurs Nomades",sub:"Traiteur · Food truck · Événements",eyebrow:"Traiteur & food truck · Strasbourg",title:"Buffets, cocktails et food truck pour vos événements.",
+  lead:"Cuisine maison de saison pour mariages, séminaires et fêtes privées. Le food truck est aussi en ville chaque semaine.",cta:"Demander un devis",nav:"Menus",
+  offerTitle:"Menus & tarifs",
+  offer:[["Buffet froid","entrées, plats, desserts","à partir de 22 € / pers."],["Cocktail dînatoire","12 pièces par personne","à partir de 18 € / pers."],["Repas servi à table","entrée, plat, dessert","à partir de 28 € / pers."],["Food truck privatisé","jusqu'à 150 couverts","sur devis"],["Mardi midi","place de l'Exemple","11 h 30 – 14 h"],["Jeudi midi","parc d'activités de l'Exemple","11 h 30 – 14 h"]],
+  gallery:["Le food truck","Cocktail","Buffet","En cuisine"],hours:[["Lundi",[9,18]],["Mardi",[9,18]],["Mercredi",[9,18]],["Jeudi",[9,18]],["Vendredi",[9,18]],["Samedi",[9,12]],["Dimanche",null]],
+  address:"Laboratoire : 9 rue de l'Exemple, 67000 Strasbourg",transport:"Livraison et service dans tout le Bas-Rhin",contactTitle:"Demander un devis",
+  contactNote:"Indiquez la date, le lieu et le nombre d'invités : nous vous envoyons une proposition de menu.",msg:"Ex. : cocktail pour 60 personnes, samedi 20 septembre",quote:true,hue:[20,40]}
 };
 const T_CAP="Photo d'exemple · vos photos la remplacent";
 const LANG=document.documentElement.lang;
@@ -274,12 +334,12 @@ function render(k){
   const t=d.hours[wd][1]; const open=t&&hr>=t[0]&&hr<t[1];
   $("status").innerHTML=`<span class="dot ${open?"":"closed"}"></span><span>${open?"Ouvert maintenant · jusqu'à "+fmt(t[1]):"Fermé actuellement"}</span>`;
   $("address").textContent=d.address; $("transport").textContent=d.transport; $("contactTitle").textContent=d.contactTitle; $("contactNote").textContent=d.contactNote;
-  $("f-msg").placeholder=d.msg; $("formBtn").textContent=k==="artisan"?"Envoyer ma demande de devis":"Envoyer la demande"; $("footName").textContent="© "+d.brand;
-  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
+  $("f-msg").placeholder=d.msg; $("formBtn").textContent=(k==="artisan"||d.quote)?"Envoyer ma demande de devis":"Envoyer la demande"; $("footName").textContent="© "+d.brand;
+  $("sect").value=k; $("reviews").hidden=!!d.noReviews;
   $("ok").style.display="none";
   try{localStorage.setItem("demo-sector",k)}catch(e){}
 }
-document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.k)));
+$("sect").addEventListener("change",e=>{render(e.target.value); try{history.replaceState(null,"","#"+e.target.value)}catch(_){}});
 $("form").addEventListener("submit",e=>{e.preventDefault();$("ok").style.display="block";});
 let start="coiffure"; try{const s=localStorage.getItem("demo-sector"); if(s&&S[s]) start=s;}catch(e){}
 const h=location.hash.slice(1); if(S[h]) start=h;
