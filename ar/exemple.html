@@ -34,7 +34,8 @@ p{margin:0}
 .demo .tag{font-size:.8rem;opacity:.9}
 .demo .tag b{color:#8FE0E3}
 .demo .back{font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;color:#fff}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tabs{display:flex;align-items:center;gap:8px;margin-left:auto}
+.tabs select{font:inherit;font-size:.9rem;font-weight:700;color:var(--shb);background:#fff;border:0;border-radius:999px;padding:7px 14px;max-width:100%}
 .tabs button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer}
 .tabs button[aria-pressed="true"]{background:#fff;color:var(--shb);border-color:#fff;font-weight:700}
 
@@ -128,12 +129,7 @@ html[dir=rtl] ul{padding-left:0;padding-right:1.1em}
 <body>
 <div class="demo"><div class="wrap">
   <a class="tag back" href="#" id="back" style="text-decoration:none">→ الكتالوج</a><span class="tag"><b>موقع توضيحي</b> · SHB CONSEIL · شركة افتراضية</span>
-  <div class="tabs" role="group" aria-label="اختر قطاعًا">
-    <button type="button" data-k="coiffure" aria-pressed="true">صالون تصفيف شعر</button>
-    <button type="button" data-k="resto" aria-pressed="false">مطعم</button>
-    <button type="button" data-k="boulangerie" aria-pressed="false">مخبز</button>
-    <button type="button" data-k="artisan" aria-pressed="false">حرفي</button>
-  </div>
+  <div class="tabs"><label for="sect" class="tag">المهنة</label><select id="sect" aria-label="اختر قطاعًا"><option value="coiffure">صالون تصفيف شعر</option><option value="resto">مطعم</option><option value="boulangerie">مخبز</option><option value="artisan">حرفي</option><option value="garage">مرآب سيارات</option><option value="bienetre">عافية ورياضة</option><option value="gite">بيت ضيافة وغرف ضيافة</option><option value="domicile">خدمات منزلية</option><option value="docteur">عيادة طبية</option><option value="photographe">مصوّر</option><option value="immobilier">وكالة عقارية</option><option value="traiteur">خدمات طعام وشاحنة طعام</option></select></div>
 </div></div>
 
 <header class="site-head"><div class="wrap">
@@ -172,7 +168,7 @@ html[dir=rtl] ul{padding-left:0;padding-right:1.1em}
     <div class="card">
       <h3>مواعيد العمل</h3>
       <table class="hours" id="hours"></table>
-      <div class="reviews"><span class="stars" id="stars">★★★★★</span><p>تظهر تقييماتك على Google هنا، مرتبطة بملف مؤسستك.</p></div>
+      <div class="reviews" id="reviews"><span class="stars" id="stars">★★★★★</span><p>تظهر تقييماتك على Google هنا، مرتبطة بملف مؤسستك.</p></div>
     </div>
     <div class="card">
       <h3>طريقة الوصول</h3>
@@ -220,7 +216,7 @@ html[dir=rtl] ul{padding-left:0;padding-right:1.1em}
 <a class="wa" href="#contact" aria-label="راسلنا عبر WhatsApp (عرض توضيحي)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
 
 <script>
-const PH={"coiffure": ["/img/398a0bb0b1.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"]};
+const PH={"coiffure": ["/img/coif-hero-2.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"], "garage": ["/img/220b4cd0a1.jpg", "/img/c69c52ac13.jpg", "/img/b6c850d05a.jpg", "/img/3502e54b99.jpg", "/img/cd714b0415.jpg"], "bienetre": ["/img/f2329d09c3.jpg", "/img/7daab776a3.jpg", "/img/d1441e0b37.jpg", "/img/8b442dc155.jpg", "/img/c5848d77d5.jpg"], "gite": ["/img/341598704e.jpg", "/img/9fcb87d7bf.jpg", "/img/e7858fdafd.jpg", "/img/79b346b085.jpg", "/img/a6207a5d48.jpg"], "domicile": ["/img/e600f42afe.jpg", "/img/ca9c043937.jpg", "/img/8e307ae1d1.jpg", "/img/655ddb9d36.jpg", "/img/feb57d5b22.jpg"], "photographe": ["/img/bcf8439889.jpg", "/img/ec6ea86866.jpg", "/img/f57aba4c0c.jpg", "/img/82ddc11a13.jpg", "/img/0c2406d451.jpg"], "immobilier": ["/img/a2b0aafcbe.jpg", "/img/7c75bb6787.jpg", "/img/aa76e0b945.jpg", "/img/c5fab289c5.jpg", "/img/21bc47ba21.jpg"], "traiteur": ["/img/90ba95cf6b.jpg", "/img/e04c774152.jpg", "/img/9b177e7438.jpg", "/img/773886b707.jpg", "/img/6e756a3ce1.jpg"], "docteur": ["/img/5e736e7cc7.jpg", "/img/0ce0c699cf.jpg", "/img/64b9ad10ed.jpg", "/img/6298565e12.jpg", "/img/fdebf04723.jpg"]};
 const S={
  coiffure:{css:{"--bg":"#FBF7F3","--surface":"#FFFFFF","--ink":"#2A1F1C","--muted":"#6E5F59","--line":"#EADFD7","--accent":"#B0476B","--accent-ink":"#FFFFFF","--soft":"#F6E7EC","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"18px","--caps":"0.01em"},
   brand:"Atelier Lumière",sub:"تصفيف شعر · باريس الدائرة 11",eyebrow:"صالون تصفيف شعر",title:"قصّات متقنة في أجواء هادئة.",
@@ -253,7 +249,71 @@ const S={
   offer:[["إصلاح تسرّب","البحث عن التسرّب وإصلاحه","حسب عرض السعر"],["استبدال سخّان الماء","التوريد والتركيب","حسب عرض السعر"],["حمّام متكامل جاهز","دُش، أثاث، بلاط","حسب عرض السعر"],["صيانة الغلاية","مع شهادة صيانة","ابتداءً من 110 €"],["تحديث التمديدات الكهربائية وفق المعايير","اللوحة، المقابس، الإنارة","حسب عرض السعر"],["منطقة العمل","تولوز + 20 كم","التنقّل مشمول"]],
   gallery:["حمّام","سباكة","كهرباء","ترميم"],hours:[["الاثنين",[8,18]],["الثلاثاء",[8,18]],["الأربعاء",[8,18]],["الخميس",[8,18]],["الجمعة",[8,17]],["السبت",null],["الأحد",null]],
   address:"تولوز والبلديات المجاورة (دائرة نصف قطرها 20 كم)",transport:"تدخّل في المنزل · رد خلال 24 ساعة عمل",contactTitle:"اطلب عرض سعر",
-  contactNote:"صف احتياجك وأضف صورة إن أمكن: سيتصل بك الحرفي لتحديد موعد وإعداد عرض السعر.",msg:"مثال: استبدال سخّان ماء سعة 200 لتر",hue:[210,190]}
+  contactNote:"صف احتياجك وأضف صورة إن أمكن: سيتصل بك الحرفي لتحديد موعد وإعداد عرض السعر.",msg:"مثال: استبدال سخّان ماء سعة 200 لتر",hue:[210,190]},
+ garage:{css:{"--bg":"#F3F4F5","--surface":"#FFFFFF","--ink":"#1B1F24","--muted":"#58606A","--line":"#DDE1E5","--accent":"#C4401B","--accent-ink":"#FFFFFF","--soft":"#F8E6DF","--display":'"Cairo","Oswald","Arial Narrow",sans-serif',"--radius":"6px","--caps":"0.02em"},
+  brand:"Garage Moreau",sub:"ميكانيك · صيانة · إطارات",eyebrow:"مرآب سيارات · رين",title:"صيانة وإصلاح، مع عرض سعر قبل كل تدخّل.",
+  lead:"فحص دوري، مكابح، إطارات، تكييف وتشخيص لجميع العلامات. سيارة بديلة عند الحجز المسبق.",cta:"احجز موعدًا",nav:"الخدمات",
+  offerTitle:"الخدمات والأسعار",
+  offer:[["تغيير الزيت + الفلتر","زيت حسب مواصفات الصانع","ابتداءً من 79 €"],["وسادات المكابح","الأمامية، قطع الغيار واليد العاملة","ابتداءً من 120 €"],["تركيب الإطارات","الموازنة مشمولة، لكل إطار","15 €"],["إعادة شحن التكييف","فحص الإحكام","ابتداءً من 69 €"],["تشخيص إلكتروني","قراءة رموز الأعطال","49 €"],["التحضير للفحص الفني","التحقّق من النقاط الأساسية","حسب عرض السعر"]],
+  gallery:["ميكانيك","إطارات","محرّك","الورشة"],hours:[["الاثنين",[8,18.5]],["الثلاثاء",[8,18.5]],["الأربعاء",[8,18.5]],["الخميس",[8,18.5]],["الجمعة",[8,18.5]],["السبت",[8.5,12]],["الأحد",null]],
+  address:"15 rue de l'Exemple, 35000 Rennes",transport:"موقف للعملاء أمام الورشة · حافلة الخط C2",contactTitle:"احجز موعدًا",
+  contactNote:"حدّد طراز السيارة والخدمة المطلوبة: سيتصل بك المرآب بموعد متاح وعرض سعر.",msg:"مثال: Clio 4، تغيير الزيت + وسادات المكابح الأمامية",hue:[15,200]},
+ bienetre:{css:{"--bg":"#F4F6F2","--surface":"#FFFFFF","--ink":"#1F2A24","--muted":"#5B6A60","--line":"#DFE6DC","--accent":"#4F7A5E","--accent-ink":"#FFFFFF","--soft":"#E4EEE6","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"20px","--caps":"0"},
+  brand:"Studio Équilibre",sub:"يوغا · بيلاتس · تدريب شخصي",eyebrow:"استوديو عافية · بوردو",title:"حصص في مجموعات صغيرة، وفق إيقاعك.",
+  lead:"يوغا وبيلاتس وتدريب فردي لجميع المستويات. حصة تجريبية أولى بالحجز المسبق.",cta:"احجز حصة",nav:"الحصص",
+  offerTitle:"الحصص والأسعار",
+  offer:[["درس جماعي","يوغا أو بيلاتس، ساعة واحدة","15 €"],["بطاقة 10 دروس","صالحة لمدة 6 أشهر","130 €"],["تدريب فردي","حصة لمدة ساعة واحدة","50 €"],["تدليك للاسترخاء","غير طبي، ساعة واحدة","60 €"],["اشتراك شهري","دروس غير محدودة","69 €/شهريًا"],["حصة تجريبية","بالحجز المسبق","offerte"]],
+  gallery:["تدريب شخصي","تدليك","استرخاء","درس يوغا"],hours:[["الاثنين",[7,21]],["الثلاثاء",[7,21]],["الأربعاء",[7,21]],["الخميس",[7,21]],["الجمعة",[7,21]],["السبت",[9,13]],["الأحد",null]],
+  address:"8 cours de l'Exemple, 33000 Bordeaux",transport:"ترام B، محطة Exemple · دقيقتان سيرًا على الأقدام",contactTitle:"احجز حصة",
+  contactNote:"اختر الدرس والموعد: يؤكّد الاستوديو الحجز برسالة نصية. يمكن أيضًا ربط الحجز عبر الإنترنت بجدولك.",msg:"مثال: درس بيلاتس يوم الثلاثاء الساعة 18:00",hue:[140,90]},
+ gite:{css:{"--bg":"#F7F4EE","--surface":"#FFFFFF","--ink":"#2B261E","--muted":"#6B6254","--line":"#E7DFD1","--accent":"#8A5A2B","--accent-ink":"#FFFFFF","--soft":"#F2E7D8","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"14px","--caps":"0"},
+  brand:"Le Clos des Tilleuls",sub:"بيت ضيافة ريفي · غرف ضيافة · دوردوني",eyebrow:"غرف ضيافة في الريف",title:"ثلاث غرف هادئة، مع فطور منزلي مشمول.",
+  lead:"على بُعد 10 دقائق من سارلا، على ضفة النهر. حديقة وموقف سيارات خاص ودرّاجات متاحة للضيوف.",cta:"التحقّق من التوفّر",nav:"الغرف",
+  offerTitle:"الغرف والأسعار",
+  offer:[["غرفة الزيزفون","سرير مزدوج، إطلالة على الحديقة","85 € / الليلة"],["غرفة النهر","سرير مزدوج، إطلالة على الماء","95 € / الليلة"],["جناح عائلي","غرفتان، حتى 4 أشخاص","140 € / الليلة"],["الفطور","منزلي الصنع","inclus"],["عشاء الضيافة","مساءً، بالحجز المسبق","28 € / للشخص"],["ضريبة الإقامة","حسب البلدية","تُضاف إلى السعر"]],
+  gallery:["غرفة الزيزفون","غرفة النهر","القرية","جناح عائلي"],hours:[["الاثنين",[8,20]],["الثلاثاء",[8,20]],["الأربعاء",[8,20]],["الخميس",[8,20]],["الجمعة",[8,20]],["السبت",[8,20]],["الأحد",[8,20]]],
+  address:"Lieu-dit l'Exemple, 24200 Sarlat-la-Canéda",transport:"موقف سيارات خاص مجاني · محطة قطار سارلا على بُعد 10 دقائق",contactTitle:"اطلب حجزًا",
+  contactNote:"حدّد تواريخك وعدد الأشخاص: نردّ عليك خلال 24 ساعة. يمكن أيضًا إضافة رابط إلى منصّة الحجز الخاصة بك.",msg:"مثال: شخصان بالغان، من 12 إلى 15 أغسطس",hue:[30,90]},
+ domicile:{css:{"--bg":"#F3F7F4","--surface":"#FFFFFF","--ink":"#17251C","--muted":"#56675B","--line":"#DAE5DD","--accent":"#2E7D4F","--accent-ink":"#FFFFFF","--soft":"#E1F0E6","--display":'"Cairo","Oswald","Arial Narrow",sans-serif',"--radius":"10px","--caps":"0.02em"},
+  brand:"Net & Vert Services",sub:"تنظيف · بستنة · أعمال صغيرة",eyebrow:"خدمات منزلية · ليل وضواحيها",title:"تنظيف وحديقة وأعمال صغيرة، بالقرب منك.",
+  lead:"تدخّل عرضي أو منتظم في ليل وضمن دائرة نصف قطرها 15 كم. عرض سعر مجاني.",cta:"اطلب عرض سعر",nav:"الخدمات",
+  offerTitle:"الخدمات والأسعار",
+  offer:[["تنظيف منتظم","أسبوعيًا أو كل 15 يومًا","25 € / الساعة"],["تنظيف شامل","الربيع، نهاية عقد الإيجار","حسب عرض السعر"],["تقليم السياجات النباتية","إزالة المخلّفات الخضراء","ابتداءً من 45 € / الساعة"],["قصّ العشب","حتى 500 م²","ابتداءً من 40 €"],["أعمال صغيرة","تركيب الأثاث، التثبيتات","35 € / الساعة"],["منطقة العمل","ليل + 15 كم","التنقّل مشمول"]],
+  gallery:["تنظيف","صيانة","حديقة","أعمال صغيرة"],hours:[["الاثنين",[8,18]],["الثلاثاء",[8,18]],["الأربعاء",[8,18]],["الخميس",[8,18]],["الجمعة",[8,18]],["السبت",[9,12]],["الأحد",null]],
+  address:"ليل والبلديات المجاورة (دائرة نصف قطرها 15 كم)",transport:"تدخّل في المنزل · رد خلال 24 ساعة عمل",contactTitle:"اطلب عرض سعر",
+  contactNote:"صف الخدمة والمساحة: سنتصل بك لتحديد موعد وإعداد عرض السعر.",msg:"مثال: تقليم 20 م من السياجات النباتية، أواخر مايو",quote:true,hue:[140,60]},
+ docteur:{css:{"--bg":"#F4F8FA","--surface":"#FFFFFF","--ink":"#14263A","--muted":"#526275","--line":"#DCE6EE","--accent":"#1F6FA8","--accent-ink":"#FFFFFF","--soft":"#E2EEF7","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"12px","--caps":"0"},
+  brand:"Cabinet médical des Acacias",sub:"طب عام · أنجيه",eyebrow:"عيادة طب عام",title:"استشارات بموعد مسبق، من الاثنين إلى صباح السبت.",
+  lead:"طبيبان عامّان متعاقدان مع التأمين الصحي الفرنسي بتعرفة القطاع 1 (conventionnés secteur 1). بطاقة التأمين الصحي (Carte Vitale) مقبولة.",cta:"احجز موعدًا",nav:"معلومات",
+  offerTitle:"الاستشارات والأتعاب",
+  offer:[["استشارة طب عام","أطباء متعاقدون بتعرفة القطاع 1 (conventionnés secteur 1)","التعرفة الرسمية المنظّمة (tarif conventionnel)"],["استشارة للأطفال","","التعرفة الرسمية المنظّمة (tarif conventionnel)"],["زيارة منزلية","للمرضى غير القادرين على التنقّل","بموعد مسبق"],["استشارة عن بُعد","للمرضى المتابَعين في العيادة","التعرفة الرسمية المنظّمة (tarif conventionnel)"],["طريقة الوصول","في الطابق الأرضي دون درج، مهيّأ للكراسي المتحرّكة","accessible"],["الحالات الطارئة خارج مواعيد العمل","اتصل بالرقم 15 (رقم الطوارئ الطبية في فرنسا)","—"]],
+  gallery:["غرفة الفحص","الاستقبال","استشارة","المكتب"],hours:[["الاثنين",[8.5,19]],["الثلاثاء",[8.5,19]],["الأربعاء",[8.5,19]],["الخميس",[8.5,19]],["الجمعة",[8.5,19]],["السبت",[8.5,12]],["الأحد",null]],
+  address:"3 place de l'Exemple, 49000 Angers",transport:"ترام A، محطة Exemple · موقف سيارات قريب",contactTitle:"احجز موعدًا",
+  contactNote:"في الموقع الحقيقي، يوجّه هذا الزر إلى خدمة حجز المواعيد عبر الإنترنت الخاصة بالعيادة. لا تُطلب هنا أي معلومات طبية. في حالة الطوارئ، اتصل بالرقم 15.",msg:"مثال: مريض جديد، أول موعد",noReviews:true,hue:[205,190]},
+ photographe:{css:{"--bg":"#F5F4F2","--surface":"#FFFFFF","--ink":"#1D1B1A","--muted":"#625D59","--line":"#E4E0DB","--accent":"#7A4B8C","--accent-ink":"#FFFFFF","--soft":"#EEE5F1","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"4px","--caps":"0"},
+  brand:"Atelier Lumen Photo",sub:"بورتريه · زفاف · منتجات",eyebrow:"مصوّر · مرسيليا",title:"صور طبيعية، للحظاتك ولمؤسستك.",
+  lead:"بورتريهات، حفلات زفاف، صور منتجات وفرق عمل. استوديو في وسط المدينة أو تنقّل داخل المنطقة.",cta:"اطلب عرض سعر",nav:"الباقات",
+  offerTitle:"الباقات والأسعار",
+  offer:[["جلسة بورتريه","ساعة واحدة في الاستوديو، 10 صور معدّلة","150 €"],["صور عائلية","في الهواء الطلق، ساعة ونصف","220 €"],["حفل زفاف","من التحضيرات إلى السهرة","ابتداءً من 1 200 €"],["صور المنتجات","خلفية بيضاء، لكل مجموعة من 10","120 €"],["بورتريهات الفريق","في مكان عملك","حسب عرض السعر"],["طباعة الصور","ورق تصوير احترافي","ابتداءً من 15 €"]],
+  gallery:["تغطية مصوّرة","حفل زفاف","ثنائي","استوديو"],hours:[["الاثنين",null],["الثلاثاء",[10,19]],["الأربعاء",[10,19]],["الخميس",[10,19]],["الجمعة",[10,19]],["السبت",[10,19]],["الأحد",null]],
+  address:"21 rue de l'Exemple, 13001 Marseille",transport:"مترو Vieux-Port · الاستوديو في الطابق الأرضي",contactTitle:"اطلب عرض سعر",
+  contactNote:"حدّد نوع الجلسة والتاريخ والمكان: سيردّ عليك المصوّر بعرض مناسب.",msg:"مثال: حفل زفاف يوم 14 يونيو، 80 مدعوًّا، Aix-en-Provence",quote:true,hue:[280,20]},
+ immobilier:{css:{"--bg":"#F4F6F9","--surface":"#FFFFFF","--ink":"#172233","--muted":"#56627A","--line":"#DDE3EC","--accent":"#B0413E","--accent-ink":"#FFFFFF","--soft":"#F5E3E2","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"10px","--caps":"0"},
+  brand:"Exemple Immobilier",sub:"بيع وشراء · تأجير · إدارة عقارات",eyebrow:"وكالة عقارية · مونبلييه",title:"بيع أو شراء أو استئجار، مع وكالة من حيّك.",
+  lead:"تقييم مجاني لعقارك، زيارات بمرافقة، ومتابعة حتى التوقيع.",cta:"اطلب تقييمًا",nav:"عقاراتنا",
+  offerTitle:"عقارات مميّزة",
+  offer:[["شقة بغرفتي نوم","72 م²، شرفة، المركز التاريخي","285 000 €"],["منزل من 5 غرف","130 م²، حديقة","465 000 €"],["استوديو","24 م²، قريب من الترام","إيجار 590 € / شهريًا شاملًا الرسوم"],["شقة بغرفة نوم واحدة","45 م²، تراس","198 000 €"],["تقييم عقارك","الرد خلال 48 ساعة","gratuite"],["الأتعاب","الجدول معروض في الوكالة وعلى الموقع","consultable"]],
+  gallery:["غرفة المعيشة","المطبخ","منزل","شقة"],hours:[["الاثنين",[9,19]],["الثلاثاء",[9,19]],["الأربعاء",[9,19]],["الخميس",[9,19]],["الجمعة",[9,19]],["السبت",[9.5,17]],["الأحد",null]],
+  address:"5 avenue de l'Exemple, 34000 Montpellier",transport:"ترام 1، محطة Exemple · موقف سيارات أمام الوكالة",contactTitle:"اطلب تقييمًا",
+  contactNote:"صف عقارك (النوع، المساحة، الحي): سيتصل بك مستشار لتحديد موعد زيارة التقييم.",msg:"مثال: شقة بغرفتي نوم مساحتها 70 م²، حي Antigone",hue:[0,210]},
+ traiteur:{css:{"--bg":"#FBF6F0","--surface":"#FFFFFF","--ink":"#2A1E16","--muted":"#6E5D50","--line":"#EFE2D4","--accent":"#B5542A","--accent-ink":"#FFFFFF","--soft":"#F7E4D8","--display":'"Cairo","Fraunces",Georgia,serif',"--radius":"18px","--caps":"0"},
+  brand:"Saveurs Nomades",sub:"خدمات طعام · شاحنة طعام · مناسبات",eyebrow:"خدمات طعام وشاحنة طعام · ستراسبورغ",title:"بوفيهات وحفلات استقبال وشاحنة طعام لمناسباتك.",
+  lead:"مطبخ منزلي موسمي لحفلات الزفاف والندوات والحفلات الخاصة. وتتواجد شاحنة الطعام أيضًا في المدينة كل أسبوع.",cta:"اطلب عرض سعر",nav:"القوائم",
+  offerTitle:"القوائم والأسعار",
+  offer:[["بوفيه بارد","مقبّلات، أطباق رئيسية، حلويات","ابتداءً من 22 € / للشخص"],["حفل استقبال مع عشاء خفيف","12 قطعة للشخص","ابتداءً من 18 € / للشخص"],["وجبة تُقدَّم على المائدة","مقبّلات، طبق رئيسي، حلوى","ابتداءً من 28 € / للشخص"],["شاحنة طعام بحجز خاص","حتى 150 شخصًا","حسب عرض السعر"],["الثلاثاء ظهرًا","place de l'Exemple","11:30 – 14:00"],["الخميس ظهرًا","parc d'activités de l'Exemple","11:30 – 14:00"]],
+  gallery:["شاحنة الطعام","حفل استقبال","بوفيه","في المطبخ"],hours:[["الاثنين",[9,18]],["الثلاثاء",[9,18]],["الأربعاء",[9,18]],["الخميس",[9,18]],["الجمعة",[9,18]],["السبت",[9,12]],["الأحد",null]],
+  address:"المطبخ المركزي: 9 rue de l'Exemple, 67000 Strasbourg",transport:"التوصيل والخدمة في كامل إقليم Bas-Rhin",contactTitle:"اطلب عرض سعر",
+  contactNote:"حدّد التاريخ والمكان وعدد المدعوّين: سنرسل إليك اقتراح قائمة طعام.",msg:"مثال: حفل استقبال لـ 60 شخصًا، يوم السبت 20 سبتمبر",quote:true,hue:[20,40]}
 };
 const T_CAP="صورة توضيحية · صورك تحلّ محلّها";
 const LANG=document.documentElement.lang;
@@ -276,12 +336,12 @@ function render(k){
   const t=d.hours[wd][1]; const open=t&&hr>=t[0]&&hr<t[1];
   $("status").innerHTML=`<span class="dot ${open?"":"closed"}"></span><span>${open?"مفتوح الآن · حتى "+fmt(t[1]):"مغلق حاليًا"}</span>`;
   $("address").textContent=d.address; $("transport").textContent=d.transport; $("contactTitle").textContent=d.contactTitle; $("contactNote").textContent=d.contactNote;
-  $("f-msg").placeholder=d.msg; $("formBtn").textContent=k==="artisan"?"إرسال طلب عرض السعر":"إرسال الطلب"; $("footName").textContent="© "+d.brand;
-  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
+  $("f-msg").placeholder=d.msg; $("formBtn").textContent=(k==="artisan"||d.quote)?"إرسال طلب عرض السعر":"إرسال الطلب"; $("footName").textContent="© "+d.brand;
+  $("sect").value=k; $("reviews").hidden=!!d.noReviews;
   $("ok").style.display="none";
   try{localStorage.setItem("demo-sector",k)}catch(e){}
 }
-document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.k)));
+$("sect").addEventListener("change",e=>{render(e.target.value); try{history.replaceState(null,"","#"+e.target.value)}catch(_){}});
 $("form").addEventListener("submit",e=>{e.preventDefault();$("ok").style.display="block";});
 let start="coiffure"; try{const s=localStorage.getItem("demo-sector"); if(s&&S[s]) start=s;}catch(e){}
 const h=location.hash.slice(1); if(S[h]) start=h;
