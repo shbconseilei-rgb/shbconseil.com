@@ -33,7 +33,8 @@ p{margin:0}
 .demo .tag{font-size:.8rem;opacity:.9}
 .demo .tag b{color:#8FE0E3}
 .demo .back{font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;color:#fff}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tabs{display:flex;align-items:center;gap:8px;margin-left:auto}
+.tabs select{font:inherit;font-size:.9rem;font-weight:700;color:var(--shb);background:#fff;border:0;border-radius:999px;padding:7px 14px;max-width:100%}
 .tabs button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer}
 .tabs button[aria-pressed="true"]{background:#fff;color:var(--shb);border-color:#fff;font-weight:700}
 
@@ -126,12 +127,7 @@ textarea{min-height:96px;resize:vertical}
 <body>
 <div class="demo"><div class="wrap">
   <a class="tag back" href="#" id="back" style="text-decoration:none">← Catálogo</a><span class="tag"><b>Web de demostración</b> · SHB CONSEIL · empresa ficticia</span>
-  <div class="tabs" role="group" aria-label="Elegir un sector">
-    <button type="button" data-k="coiffure" aria-pressed="true">Peluquería</button>
-    <button type="button" data-k="resto" aria-pressed="false">Restaurante</button>
-    <button type="button" data-k="boulangerie" aria-pressed="false">Panadería</button>
-    <button type="button" data-k="artisan" aria-pressed="false">Artesano</button>
-  </div>
+  <div class="tabs"><label for="sect" class="tag">Sector</label><select id="sect" aria-label="Elegir un sector"><option value="coiffure">Peluquería</option><option value="resto">Restaurante</option><option value="boulangerie">Panadería</option><option value="artisan">Artesano</option><option value="garage">Taller mecánico</option><option value="bienetre">Bienestar y deporte</option><option value="gite">Casa rural y casa de huéspedes</option><option value="domicile">Servicios a domicilio</option><option value="docteur">Consulta médica</option><option value="photographe">Fotógrafo</option><option value="immobilier">Agencia inmobiliaria</option><option value="traiteur">Catering y food truck</option></select></div>
 </div></div>
 
 <header class="site-head"><div class="wrap">
@@ -170,7 +166,7 @@ textarea{min-height:96px;resize:vertical}
     <div class="card">
       <h3>Horarios</h3>
       <table class="hours" id="hours"></table>
-      <div class="reviews"><span class="stars" id="stars">★★★★★</span><p>Sus reseñas de Google aparecen aquí, vinculadas a la ficha de su establecimiento.</p></div>
+      <div class="reviews" id="reviews"><span class="stars" id="stars">★★★★★</span><p>Sus reseñas de Google aparecen aquí, vinculadas a la ficha de su establecimiento.</p></div>
     </div>
     <div class="card">
       <h3>Cómo llegar</h3>
@@ -218,7 +214,7 @@ textarea{min-height:96px;resize:vertical}
 <a class="wa" href="#contact" aria-label="Escribir por WhatsApp (demostración)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
 
 <script>
-const PH={"coiffure": ["/img/398a0bb0b1.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"]};
+const PH={"coiffure": ["/img/coif-hero-2.jpg", "/img/850b6d6e30.jpg", "/img/dedd715f56.jpg", "/img/e81e642e4f.jpg", "/img/22da78538d.jpg"], "resto": ["/img/488b61591c.jpg", "/img/a4c41bd614.jpg", "/img/1c5391cf24.jpg", "/img/16f51cb34a.jpg", "/img/5d6c3adbcf.jpg"], "boulangerie": ["/img/e5ded9aad8.jpg", "/img/b2b10655e4.jpg", "/img/cafefd1acc.jpg", "/img/aeab5ba9be.jpg", "/img/3af66ad071.jpg"], "artisan": ["/img/21e3381685.jpg", "/img/bd7b33a08b.jpg", "/img/faa0047407.jpg", "/img/519464d517.jpg", "/img/2c21363f62.jpg"], "garage": ["/img/220b4cd0a1.jpg", "/img/c69c52ac13.jpg", "/img/b6c850d05a.jpg", "/img/3502e54b99.jpg", "/img/cd714b0415.jpg"], "bienetre": ["/img/f2329d09c3.jpg", "/img/7daab776a3.jpg", "/img/d1441e0b37.jpg", "/img/8b442dc155.jpg", "/img/c5848d77d5.jpg"], "gite": ["/img/341598704e.jpg", "/img/9fcb87d7bf.jpg", "/img/e7858fdafd.jpg", "/img/79b346b085.jpg", "/img/a6207a5d48.jpg"], "domicile": ["/img/e600f42afe.jpg", "/img/ca9c043937.jpg", "/img/8e307ae1d1.jpg", "/img/655ddb9d36.jpg", "/img/feb57d5b22.jpg"], "photographe": ["/img/bcf8439889.jpg", "/img/ec6ea86866.jpg", "/img/f57aba4c0c.jpg", "/img/82ddc11a13.jpg", "/img/0c2406d451.jpg"], "immobilier": ["/img/a2b0aafcbe.jpg", "/img/7c75bb6787.jpg", "/img/aa76e0b945.jpg", "/img/c5fab289c5.jpg", "/img/21bc47ba21.jpg"], "traiteur": ["/img/90ba95cf6b.jpg", "/img/e04c774152.jpg", "/img/9b177e7438.jpg", "/img/773886b707.jpg", "/img/6e756a3ce1.jpg"], "docteur": ["/img/5e736e7cc7.jpg", "/img/0ce0c699cf.jpg", "/img/64b9ad10ed.jpg", "/img/6298565e12.jpg", "/img/fdebf04723.jpg"]};
 const S={
  coiffure:{css:{"--bg":"#FBF7F3","--surface":"#FFFFFF","--ink":"#2A1F1C","--muted":"#6E5F59","--line":"#EADFD7","--accent":"#B0476B","--accent-ink":"#FFFFFF","--soft":"#F6E7EC","--display":'"Fraunces",Georgia,serif',"--radius":"18px","--caps":"0.01em"},
   brand:"Atelier Lumière",sub:"Peluquería · París (distrito 11)",eyebrow:"Peluquería",title:"Cortes cuidados, en un ambiente tranquilo.",
@@ -251,7 +247,71 @@ const S={
   offer:[["Reparación de fugas","localización y reparación","según presupuesto"],["Sustitución de termo eléctrico","suministro e instalación","según presupuesto"],["Baño llave en mano","ducha, mueble, azulejos","según presupuesto"],["Mantenimiento de caldera","se entrega certificado","desde 110 €"],["Adecuación de la instalación eléctrica a la normativa","cuadro, enchufes, iluminación","según presupuesto"],["Zona de trabajo","Toulouse + 20 km","desplazamiento incluido"]],
   gallery:["Baño","Fontanería","Electricidad","Reformas"],hours:[["Lunes",[8,18]],["Martes",[8,18]],["Miércoles",[8,18]],["Jueves",[8,18]],["Viernes",[8,17]],["Sábado",null],["Domingo",null]],
   address:"Toulouse y municipios cercanos (radio de 20 km)",transport:"Servicio a domicilio · respuesta en 24 h hábiles",contactTitle:"Pedir presupuesto",
-  contactNote:"Describa su necesidad y añada una foto si es posible: el artesano le llamará para fijar una cita y preparar el presupuesto.",msg:"Ej.: sustitución de un termo eléctrico de 200 L",hue:[210,190]}
+  contactNote:"Describa su necesidad y añada una foto si es posible: el artesano le llamará para fijar una cita y preparar el presupuesto.",msg:"Ej.: sustitución de un termo eléctrico de 200 L",hue:[210,190]},
+ garage:{css:{"--bg":"#F3F4F5","--surface":"#FFFFFF","--ink":"#1B1F24","--muted":"#58606A","--line":"#DDE1E5","--accent":"#C4401B","--accent-ink":"#FFFFFF","--soft":"#F8E6DF","--display":'"Oswald","Arial Narrow",sans-serif',"--radius":"6px","--caps":"0.02em"},
+  brand:"Garage Moreau",sub:"Mecánica · Mantenimiento · Neumáticos",eyebrow:"Taller mecánico · Rennes",title:"Mantenimiento y reparación, con un presupuesto antes de cada intervención.",
+  lead:"Revisión, frenos, neumáticos, aire acondicionado y diagnóstico para todas las marcas. Vehículo de cortesía con reserva previa.",cta:"Pedir cita",nav:"Servicios",
+  offerTitle:"Servicios & precios",
+  offer:[["Cambio de aceite + filtro","aceite según el fabricante","desde 79 €"],["Pastillas de freno","delanteras, piezas y mano de obra","desde 120 €"],["Montaje de neumáticos","equilibrado incluido, por neumático","15 €"],["Recarga de aire acondicionado","control de estanqueidad","desde 69 €"],["Diagnóstico electrónico","lectura de códigos de error","49 €"],["Preparación para la ITV (contrôle technique)","revisión de los puntos clave","según presupuesto"]],
+  gallery:["Mecánica","Neumáticos","Motor","El taller"],hours:[["Lunes",[8,18.5]],["Martes",[8,18.5]],["Miércoles",[8,18.5]],["Jueves",[8,18.5]],["Viernes",[8,18.5]],["Sábado",[8.5,12]],["Domingo",null]],
+  address:"15 rue de l'Exemple, 35000 Rennes",transport:"Aparcamiento para clientes frente al taller · autobús línea C2",contactTitle:"Pedir cita",
+  contactNote:"Indique el modelo del vehículo y el servicio que necesita: el taller le llamará con una fecha y un presupuesto.",msg:"Ej.: Clio 4, cambio de aceite + pastillas delanteras",hue:[15,200]},
+ bienetre:{css:{"--bg":"#F4F6F2","--surface":"#FFFFFF","--ink":"#1F2A24","--muted":"#5B6A60","--line":"#DFE6DC","--accent":"#4F7A5E","--accent-ink":"#FFFFFF","--soft":"#E4EEE6","--display":'"Fraunces",Georgia,serif',"--radius":"20px","--caps":"0"},
+  brand:"Studio Équilibre",sub:"Yoga · Pilates · Entrenamiento personal",eyebrow:"Estudio de bienestar · Burdeos",title:"Sesiones en grupos reducidos, a su ritmo.",
+  lead:"Yoga, pilates y entrenamiento personal para todos los niveles. Primera sesión de prueba con reserva previa.",cta:"Reservar una sesión",nav:"Sesiones",
+  offerTitle:"Sesiones & precios",
+  offer:[["Clase colectiva","yoga o pilates, 1 h","15 €"],["Bono de 10 clases","válido 6 meses","130 €"],["Entrenamiento personal","sesión de 1 h","50 €"],["Masaje de bienestar","no médico, 1 h","60 €"],["Cuota mensual","clases ilimitadas","69 €/mes"],["Sesión de prueba","con reserva previa","offerte"]],
+  gallery:["Entrenamiento","Masaje","Relajación","Clase de yoga"],hours:[["Lunes",[7,21]],["Martes",[7,21]],["Miércoles",[7,21]],["Jueves",[7,21]],["Viernes",[7,21]],["Sábado",[9,13]],["Domingo",null]],
+  address:"8 cours de l'Exemple, 33000 Bordeaux",transport:"Tranvía B, parada Exemple · a 2 minutos a pie",contactTitle:"Reservar una sesión",
+  contactNote:"Elija la clase y el horario: el estudio le confirmará por SMS. La reserva online también puede conectarse con su agenda.",msg:"Ej.: clase de pilates el martes a las 18:00",hue:[140,90]},
+ gite:{css:{"--bg":"#F7F4EE","--surface":"#FFFFFF","--ink":"#2B261E","--muted":"#6B6254","--line":"#E7DFD1","--accent":"#8A5A2B","--accent-ink":"#FFFFFF","--soft":"#F2E7D8","--display":'"Fraunces",Georgia,serif',"--radius":"14px","--caps":"0"},
+  brand:"Le Clos des Tilleuls",sub:"Casa rural · Casa de huéspedes · Dordoña",eyebrow:"Casa de huéspedes en el campo",title:"Tres habitaciones tranquilas, desayuno casero incluido.",
+  lead:"A 10 minutos de Sarlat, a orillas del río. Jardín, aparcamiento privado y bicicletas a su disposición.",cta:"Consultar disponibilidad",nav:"Habitaciones",
+  offerTitle:"Habitaciones & precios",
+  offer:[["Habitación Tilo","cama doble, vistas al jardín","85 € / noche"],["Habitación Río","cama doble, vistas al agua","95 € / noche"],["Suite Familiar","2 habitaciones, hasta 4 personas","140 € / noche"],["Desayuno","casero","inclus"],["Cena en la casa","por la noche, con reserva previa","28 € / pers."],["Tasa turística","según el municipio","aparte"]],
+  gallery:["Habitación Tilo","Habitación Río","El pueblo","Suite Familiar"],hours:[["Lunes",[8,20]],["Martes",[8,20]],["Miércoles",[8,20]],["Jueves",[8,20]],["Viernes",[8,20]],["Sábado",[8,20]],["Domingo",[8,20]]],
+  address:"Lieu-dit l'Exemple, 24200 Sarlat-la-Canéda",transport:"Aparcamiento privado gratuito · estación de Sarlat a 10 minutos",contactTitle:"Solicitar una reserva",
+  contactNote:"Indique sus fechas y el número de personas: le responderemos en 24 h. También se puede añadir un enlace a su plataforma de reservas.",msg:"Ej.: 2 adultos, del 12 al 15 de agosto",hue:[30,90]},
+ domicile:{css:{"--bg":"#F3F7F4","--surface":"#FFFFFF","--ink":"#17251C","--muted":"#56675B","--line":"#DAE5DD","--accent":"#2E7D4F","--accent-ink":"#FFFFFF","--soft":"#E1F0E6","--display":'"Oswald","Arial Narrow",sans-serif',"--radius":"10px","--caps":"0.02em"},
+  brand:"Net & Vert Services",sub:"Limpieza · Jardinería · Pequeñas reparaciones",eyebrow:"Servicios a domicilio · Lille y alrededores",title:"Limpieza, jardín y pequeñas reparaciones, cerca de usted.",
+  lead:"Servicio puntual o periódico en Lille y en un radio de 15 km. Presupuesto gratuito.",cta:"Pedir presupuesto",nav:"Servicios",
+  offerTitle:"Servicios & precios",
+  offer:[["Limpieza periódica","semanal o cada 15 días","25 € / h"],["Limpieza a fondo","primavera, fin de alquiler","según presupuesto"],["Poda de setos","retirada de restos vegetales","desde 45 € / h"],["Corte de césped","hasta 500 m²","desde 40 €"],["Pequeñas reparaciones","montaje de muebles, fijaciones","35 € / h"],["Zona de trabajo","Lille + 15 km","desplazamiento incluido"]],
+  gallery:["Limpieza","Mantenimiento","Jardín","Pequeñas reparaciones"],hours:[["Lunes",[8,18]],["Martes",[8,18]],["Miércoles",[8,18]],["Jueves",[8,18]],["Viernes",[8,18]],["Sábado",[9,12]],["Domingo",null]],
+  address:"Lille y municipios cercanos (radio de 15 km)",transport:"Servicio a domicilio · respuesta en 24 h hábiles",contactTitle:"Pedir presupuesto",
+  contactNote:"Describa el servicio y la superficie: le llamaremos para fijar una cita y preparar el presupuesto.",msg:"Ej.: poda de 20 m de setos, a finales de mayo",quote:true,hue:[140,60]},
+ docteur:{css:{"--bg":"#F4F8FA","--surface":"#FFFFFF","--ink":"#14263A","--muted":"#526275","--line":"#DCE6EE","--accent":"#1F6FA8","--accent-ink":"#FFFFFF","--soft":"#E2EEF7","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"12px","--caps":"0"},
+  brand:"Cabinet médical des Acacias",sub:"Medicina general · Angers",eyebrow:"Consulta de medicina general",title:"Consultas con cita previa, de lunes a sábado por la mañana.",
+  lead:"Dos médicos de cabecera concertados con la seguridad social francesa (conventionnés secteur 1). Se acepta la tarjeta sanitaria francesa (Carte Vitale).",cta:"Pedir cita",nav:"Información",
+  offerTitle:"Consultas & honorarios",
+  offer:[["Consulta de medicina general","médicos concertados (conventionnés secteur 1)","tarifa regulada (tarif conventionnel)"],["Consulta pediátrica","","tarifa regulada (tarif conventionnel)"],["Visita a domicilio","pacientes que no pueden desplazarse","con cita previa"],["Teleconsulta","pacientes atendidos en la consulta","tarifa regulada (tarif conventionnel)"],["Cómo llegar","a pie de calle, accesible en silla de ruedas","accessible"],["Urgencias fuera del horario","llame al 15 (número de urgencias médicas en Francia)","—"]],
+  gallery:["Sala de exploración","Recepción","Consulta","Despacho"],hours:[["Lunes",[8.5,19]],["Martes",[8.5,19]],["Miércoles",[8.5,19]],["Jueves",[8.5,19]],["Viernes",[8.5,19]],["Sábado",[8.5,12]],["Domingo",null]],
+  address:"3 place de l'Exemple, 49000 Angers",transport:"Tranvía A, parada Exemple · aparcamiento cercano",contactTitle:"Pedir cita",
+  contactNote:"En la web real, este botón lleva al servicio de citas online de la consulta. Aquí no se solicita ninguna información médica. En caso de urgencia, llame al 15 (número de urgencias médicas en Francia).",msg:"Ej.: paciente nuevo, primera cita",noReviews:true,hue:[205,190]},
+ photographe:{css:{"--bg":"#F5F4F2","--surface":"#FFFFFF","--ink":"#1D1B1A","--muted":"#625D59","--line":"#E4E0DB","--accent":"#7A4B8C","--accent-ink":"#FFFFFF","--soft":"#EEE5F1","--display":'"Fraunces",Georgia,serif',"--radius":"4px","--caps":"0"},
+  brand:"Atelier Lumen Photo",sub:"Retrato · Boda · Producto",eyebrow:"Fotógrafo · Marsella",title:"Fotos naturales, para sus momentos y su empresa.",
+  lead:"Retratos, bodas, fotos de producto y de equipos. Estudio en el centro o desplazamiento por la región.",cta:"Pedir presupuesto",nav:"Planes",
+  offerTitle:"Paquetes & precios",
+  offer:[["Sesión de retrato","1 h en estudio, 10 fotos retocadas","150 €"],["Fotos de familia","en exteriores, 1 h 30 min","220 €"],["Boda","de los preparativos a la fiesta","desde 1200 €"],["Fotos de producto","fondo blanco, por lote de 10","120 €"],["Retratos de equipo","en su lugar de trabajo","según presupuesto"],["Copias impresas","papel fotográfico profesional","desde 15 €"]],
+  gallery:["Reportaje","Boda","Pareja","Estudio"],hours:[["Lunes",null],["Martes",[10,19]],["Miércoles",[10,19]],["Jueves",[10,19]],["Viernes",[10,19]],["Sábado",[10,19]],["Domingo",null]],
+  address:"21 rue de l'Exemple, 13001 Marseille",transport:"Metro Vieux-Port · estudio en planta baja",contactTitle:"Pedir presupuesto",
+  contactNote:"Indique el tipo de sesión, la fecha y el lugar: el fotógrafo le responderá con una propuesta.",msg:"Ej.: boda el 14 de junio, 80 invitados, Aix-en-Provence",quote:true,hue:[280,20]},
+ immobilier:{css:{"--bg":"#F4F6F9","--surface":"#FFFFFF","--ink":"#172233","--muted":"#56627A","--line":"#DDE3EC","--accent":"#B0413E","--accent-ink":"#FFFFFF","--soft":"#F5E3E2","--display":'"Manrope","Segoe UI",sans-serif',"--radius":"10px","--caps":"0"},
+  brand:"Exemple Immobilier",sub:"Compraventa · Alquiler · Administración",eyebrow:"Agencia inmobiliaria · Montpellier",title:"Vender, comprar o alquilar, con una agencia de barrio.",
+  lead:"Valoración gratuita de su inmueble, visitas acompañadas y seguimiento hasta la firma.",cta:"Solicitar una valoración",nav:"Nuestros inmuebles",
+  offerTitle:"Inmuebles destacados",
+  offer:[["Piso de 2 dormitorios","72 m², balcón, casco histórico","285 000 €"],["Casa de 5 habitaciones","130 m², jardín","465 000 €"],["Estudio","24 m², cerca del tranvía","alquiler 590 € / mes, gastos incluidos"],["Piso de 1 dormitorio","45 m², terraza","198 000 €"],["Valoración de su inmueble","respuesta en 48 h","gratuite"],["Honorarios","tabla expuesta en la agencia y en la web","consultable"]],
+  gallery:["Salón","Cocina","Casa","Piso"],hours:[["Lunes",[9,19]],["Martes",[9,19]],["Miércoles",[9,19]],["Jueves",[9,19]],["Viernes",[9,19]],["Sábado",[9.5,17]],["Domingo",null]],
+  address:"5 avenue de l'Exemple, 34000 Montpellier",transport:"Tranvía 1, parada Exemple · aparcamiento frente a la agencia",contactTitle:"Solicitar una valoración",
+  contactNote:"Describa su inmueble (tipo, superficie, barrio): un asesor le llamará para concertar una visita de valoración.",msg:"Ej.: piso de 2 dormitorios de 70 m², barrio Antigone",hue:[0,210]},
+ traiteur:{css:{"--bg":"#FBF6F0","--surface":"#FFFFFF","--ink":"#2A1E16","--muted":"#6E5D50","--line":"#EFE2D4","--accent":"#B5542A","--accent-ink":"#FFFFFF","--soft":"#F7E4D8","--display":'"Fraunces",Georgia,serif',"--radius":"18px","--caps":"0"},
+  brand:"Saveurs Nomades",sub:"Catering · Food truck · Eventos",eyebrow:"Catering y food truck · Estrasburgo",title:"Bufés, cócteles y food truck para sus eventos.",
+  lead:"Cocina casera de temporada para bodas, seminarios y fiestas privadas. El food truck también está en la ciudad cada semana.",cta:"Pedir presupuesto",nav:"Menús",
+  offerTitle:"Menús & precios",
+  offer:[["Bufé frío","entrantes, platos principales, postres","desde 22 € / pers."],["Cóctel cena","12 piezas por persona","desde 18 € / pers."],["Comida servida en mesa","entrante, plato principal, postre","desde 28 € / pers."],["Food truck en exclusiva","hasta 150 comensales","según presupuesto"],["Martes a mediodía","place de l'Exemple","11:30 – 14:00"],["Jueves a mediodía","parque empresarial de l'Exemple","11:30 – 14:00"]],
+  gallery:["El food truck","Cóctel","Bufé","En la cocina"],hours:[["Lunes",[9,18]],["Martes",[9,18]],["Miércoles",[9,18]],["Jueves",[9,18]],["Viernes",[9,18]],["Sábado",[9,12]],["Domingo",null]],
+  address:"Obrador: 9 rue de l'Exemple, 67000 Strasbourg",transport:"Entrega y servicio en todo el Bajo Rin",contactTitle:"Pedir presupuesto",
+  contactNote:"Indique la fecha, el lugar y el número de invitados: le enviaremos una propuesta de menú.",msg:"Ej.: cóctel para 60 personas, sábado 20 de septiembre",quote:true,hue:[20,40]}
 };
 const T_CAP="Foto de ejemplo · sus fotos la sustituyen";
 const LANG=document.documentElement.lang;
@@ -274,12 +334,12 @@ function render(k){
   const t=d.hours[wd][1]; const open=t&&hr>=t[0]&&hr<t[1];
   $("status").innerHTML=`<span class="dot ${open?"":"closed"}"></span><span>${open?"Abierto ahora · hasta las "+fmt(t[1]):"Cerrado ahora"}</span>`;
   $("address").textContent=d.address; $("transport").textContent=d.transport; $("contactTitle").textContent=d.contactTitle; $("contactNote").textContent=d.contactNote;
-  $("f-msg").placeholder=d.msg; $("formBtn").textContent=k==="artisan"?"Enviar mi solicitud de presupuesto":"Enviar la solicitud"; $("footName").textContent="© "+d.brand;
-  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
+  $("f-msg").placeholder=d.msg; $("formBtn").textContent=(k==="artisan"||d.quote)?"Enviar mi solicitud de presupuesto":"Enviar la solicitud"; $("footName").textContent="© "+d.brand;
+  $("sect").value=k; $("reviews").hidden=!!d.noReviews;
   $("ok").style.display="none";
   try{localStorage.setItem("demo-sector",k)}catch(e){}
 }
-document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.k)));
+$("sect").addEventListener("change",e=>{render(e.target.value); try{history.replaceState(null,"","#"+e.target.value)}catch(_){}});
 $("form").addEventListener("submit",e=>{e.preventDefault();$("ok").style.display="block";});
 let start="coiffure"; try{const s=localStorage.getItem("demo-sector"); if(s&&S[s]) start=s;}catch(e){}
 const h=location.hash.slice(1); if(S[h]) start=h;
