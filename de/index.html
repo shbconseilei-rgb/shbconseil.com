@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html data-theme="light" lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,30 +14,31 @@
 <link rel="alternate" hreflang="pt" href="https://shbconseil.com/pt/">
 <link rel="alternate" hreflang="ar" href="https://shbconseil.com/ar/">
 <link rel="alternate" hreflang="x-default" href="https://shbconseil.com/">
-<meta property="og:title" content="SHB CONSEIL – Websites für Geschäfte und Handwerksbetriebe">
-<meta property="og:description" content="Websites, Google-Unternehmensprofil und soziale Netzwerke für lokale Unternehmen. Créteil (Frankreich).">
+<meta property="og:title" content="Website-Erstellung für kleine Unternehmen und Handwerker — SHB CONSEIL">
+<meta property="og:description" content="SHB CONSEIL erstellt Websites und mobile Apps und verbessert die Online-Präsenz von Geschäften, Handwerkern und Selbstständigen. Transparente Preise, 13 Branchenvorlagen.">
 <meta property="og:url" content="https://shbconseil.com/de/">
 <meta property="og:locale" content="de_DE">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://shbconseil.com/favicon.png">
-<title>SHB CONSEIL</title>
-<meta name="description" content="SHB CONSEIL – Websites, Google-Unternehmensprofil und soziale Netzwerke für Geschäfte, Handwerksbetriebe und Selbstständige. Créteil (Frankreich).">
+<meta property="og:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website-Erstellung für kleine Unternehmen und Handwerker — SHB CONSEIL">
+<meta name="twitter:description" content="SHB CONSEIL erstellt Websites und mobile Apps und verbessert die Online-Präsenz von Geschäften, Handwerkern und Selbstständigen. Transparente Preise, 13 Branchenvorlagen.">
+<meta name="twitter:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<title>Website-Erstellung für kleine Unternehmen und Handwerker — SHB CONSEIL</title>
+<meta name="description" content="SHB CONSEIL erstellt Websites und mobile Apps und verbessert die Online-Präsenz von Geschäften, Handwerkern und Selbstständigen. Transparente Preise, 13 Branchenvorlagen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 :root{
+  color-scheme:light;
   --ground:#F3F7F8; --surface:#FFFFFF; --ink:#0B2238; --muted:#4A5B6B; --line:#D6E1E6;
   --navy:#073C6D; --teal:#11979D; --teal-ink:#0B6F74; --tint:#E3F2F3; --warm:#F2A541;
   --ok:#1B7F4B; --no:#B4412F; --logo-n:#073C6D; --logo-t:#11979D; --on-navy:#FFFFFF;
   --display:"Poppins","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}}
-:root[data-theme="dark"]{
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
@@ -78,7 +79,7 @@ nav{display:flex;gap:22px;font-size:.95rem} nav a{color:var(--muted);text-decora
 section{padding-block:64px}
 .sec-head{display:grid;gap:10px;max-width:40em;margin-bottom:32px}
 .sec-head p{color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .svc{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
 .svc h3{font-size:1.08rem;font-weight:600}
 .svc p{color:var(--muted);font-size:.97rem}
@@ -90,6 +91,7 @@ section{padding-block:64px}
 .pack h3{font-size:1.2rem;font-weight:600}
 .pack .for{color:var(--muted);font-size:.95rem}
 .price{font-family:var(--display);font-variant-numeric:tabular-nums}
+.price .was{font-size:.46em;font-weight:600;color:var(--muted);text-decoration:line-through;margin-inline-start:10px;vertical-align:.18em}
 .price .now{font-size:2rem;font-weight:700;color:var(--ink)} .price .unit{font-size:.9rem;color:var(--muted)}
 .launch{font-size:.88rem;background:var(--tint);color:var(--ink);border-radius:10px;padding:8px 12px}
 .launch b{color:var(--teal-ink)}
@@ -134,8 +136,8 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .extras-cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 .xitem{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .xitem b{font-weight:600} .xitem span{color:var(--muted);font-size:.88rem;display:block} .xitem .p{font-family:var(--display);font-weight:600;white-space:nowrap;color:var(--teal-ink)}
-@media (max-width:900px){.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} nav{display:none}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
+@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} header.top .wrap{flex-wrap:wrap;column-gap:8px;row-gap:6px;padding-block:9px}.top .brand{gap:7px}.top .brand svg{height:26px}.top .brand b,.top .brand span{font-size:.95rem}.top .lang summary{padding:5px 9px;font-size:.85rem}.top .btn.primary{padding:8px 12px;font-size:.88rem}nav{display:flex;order:5;width:100%;gap:18px;overflow-x:auto;padding-top:10px;margin-top:2px;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;padding-block:2px}}
+@media (max-width:520px){.services{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 
 .lang{position:relative}
@@ -146,6 +148,53 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .lang .menu a{padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink)} .lang .menu a:hover{background:var(--tint)} .lang .menu a[aria-current]{font-weight:700;color:var(--teal-ink)}
 .langs-foot{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 10px} .langs-foot a{color:inherit}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "SHB CONSEIL EI",
+ "alternateName": "SHB CONSEIL",
+ "url": "https://shbconseil.com/de/",
+ "image": "https://shbconseil.com/img/og-shbconseil.png",
+ "logo": "https://shbconseil.com/img/og-shbconseil.png",
+ "email": "shbconseilei@gmail.com",
+ "telephone": "+33759836620",
+ "founder": {
+  "@type": "Person",
+  "name": "Souhaib Zarrouk"
+ },
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Créteil",
+  "postalCode": "94000",
+  "addressCountry": "FR"
+ },
+ "areaServed": "Worldwide",
+ "availableLanguage": [
+  "fr",
+  "en",
+  "es",
+  "it",
+  "de",
+  "el",
+  "pt",
+  "ar"
+ ],
+ "knowsAbout": [
+  "création de site internet",
+  "site vitrine",
+  "présence locale",
+  "réseaux sociaux",
+  "application mobile"
+ ],
+ "vatID": "TVA non applicable, art. 293 B du CGI",
+ "identifier": {
+  "@type": "PropertyValue",
+  "name": "SIRET",
+  "value": "94515423500010"
+ }
+}
+</script>
 </head>
 <body>
 
@@ -190,7 +239,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 </div></section>
 
 <section id="catalogue"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Katalog</span><h2>Wählen Sie die passende Website-Vorlage für Ihre Branche</h2><p>Zwölf Ausgangsvorlagen, jeweils angepasst mit Ihren Texten, Fotos, Öffnungszeiten und Farben. Klicken Sie auf „Beispiel ansehen“, um eine vollständige Website zu durchstöbern.</p></div>
+  <div class="sec-head"><span class="eyebrow">Katalog</span><h2>Wählen Sie die passende Website-Vorlage für Ihre Branche</h2><p>Dreizehn Ausgangsvorlagen, jeweils angepasst mit Ihren Texten, Fotos, Öffnungszeiten und Farben. Klicken Sie auf „Beispiel ansehen“, um eine vollständige Website zu durchstöbern.</p></div>
   <div class="cat">
     <article class="model"><div class="shot"><img src="/img/coif-thumb-2.jpg" alt="Vorschau der Vorlage Salon" loading="lazy"><span class="lbl">Salon & Beauty</span></div>
       <div class="body"><h3>Vorlage Salon</h3><p class="for">Für: Friseursalons, Barbershops, Kosmetikstudios, Nagelstudios</p><ul><li>Leistungen und Preise</li><li>Button zur Terminbuchung</li><li>Galerie Ihrer Arbeiten</li><li>Öffnungszeiten mit „jetzt geöffnet“</li></ul>
@@ -211,8 +260,11 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
       <div class="body"><h3>Vorlage Wellness</h3><p class="for">Für: Personal Trainer, Yogastudios, Masseure (nicht medizinisch)</p><ul><li>Kurse, Einheiten und Preise</li><li>Buchung einer Einheit</li><li>Wochenplan</li><li>Galerie des Studios</li></ul>
       <div class="foot"><span class="from"><b>ab 490 €</b><small>statt 690 € · Einführungspreis</small></span><a class="btn primary small" href="exemple.html#bienetre">Beispiel ansehen</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/341598704e.jpg" alt="Vorschau der Vorlage Ferienhaus" loading="lazy"><span class="lbl">Unterkunft</span></div>
-      <div class="body"><h3>Vorlage Ferienhaus</h3><p class="for">Für: Ferienhäuser, Gästezimmer (Chambres d'hôtes), kleine Hotels</p><ul><li>Zimmer mit Fotos und Preisen</li><li>Buchungsanfrage</li><li>Link zu Ihrer Buchungsplattform</li><li>Anreise und Aktivitäten in der Umgebung</li></ul>
+      <div class="body"><h3>Vorlage Ferienhaus</h3><p class="for">Für: Ferienhäuser, Gästezimmer, Ferienwohnungen</p><ul><li>Zimmer mit Fotos und Preisen</li><li>Buchungsanfrage</li><li>Link zu Ihrer Buchungsplattform</li><li>Anreise und Aktivitäten in der Umgebung</li></ul>
       <div class="foot"><span class="from"><b>ab 490 €</b><small>statt 690 € · Einführungspreis</small></span><a class="btn primary small" href="exemple.html#gite">Beispiel ansehen</a></div></div></article>
+    <article class="model"><div class="shot"><img src="/img/c5fab289c5.jpg" alt="Vorschau der Vorlage Hotel" loading="lazy"><span class="lbl">Hotellerie</span></div>
+      <div class="body"><h3>Vorlage Hotel</h3><p class="for">Für: Hotels, Aparthotels, Hotel-Restaurants</p><ul><li>Zimmer, Ausstattung und Preise</li><li>Direkte Buchungsanfrage</li><li>Services: Frühstück, Parkplatz, Wellness</li><li>Anreise, Karte und praktische Hinweise</li></ul>
+      <div class="foot"><span class="from"><b>ab 490 €</b><small>statt 690 € · Einführungspreis</small></span><a class="btn primary small" href="exemple.html#hotel">Beispiel ansehen</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/e600f42afe.jpg" alt="Vorschau der Vorlage haushaltsnahe Dienstleistungen" loading="lazy"><span class="lbl">Haushaltsnahe Dienstleistungen</span></div>
       <div class="body"><h3>Vorlage Dienstleistungen</h3><p class="for">Für: Reinigung, Gartenpflege, kleine Reparaturen</p><ul><li>Leistungen und Einsatzgebiet</li><li>Angebotsanfrage</li><li>Klare Stundensätze</li><li>Direktanruf mit einem Klick</li></ul>
       <div class="foot"><span class="from"><b>ab 490 €</b><small>statt 690 € · Einführungspreis</small></span><a class="btn primary small" href="exemple.html#domicile">Beispiel ansehen</a></div></div></article>
@@ -234,6 +286,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="xitem"><div><b>Soziale Netzwerke</b><span>Erstellung oder Überarbeitung von 2 Profilen</span></div><span class="p">190 €</span></div>
     <div class="xitem"><div><b>Online-Reservierung / Terminbuchung</b><span>Zusatzoption für Ihre Website</span></div><span class="p">+150 €</span></div>
     <div class="xitem"><div><b>Speisekarte oder Katalog online</b><span>Restaurantkarte oder Produkte</span></div><span class="p">ab +120 €</span></div>
+    <div class="xitem"><div><b>Mobile App</b><span>iPhone und Android, veröffentlicht im App Store und bei Google Play</span></div><span class="p">auf Anfrage</span></div>
   </div>
   <p class="cat-note">Beispiele mit fiktiven Unternehmen und Illustrationsfotos (Unsplash). Nettopreise, keine Umsatzsteuer ausgewiesen (Art. 293 B des französischen Steuergesetzbuchs, CGI).</p>
 </div></section>
@@ -245,6 +298,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="svc"><span class="code">PROFESSIONELLE WEBSITE</span><h3>Mehrere Seiten, mehr Details</h3><p>Individuelles Design, Terminbuchung, Reservierung, Speisekarte oder Katalog – je nach Branche.</p></div>
     <div class="svc"><span class="code">LOKALE PRÄSENZ</span><h3>Ein gepflegtes Google-Unternehmensprofil</h3><p>Einheitliche Kontaktdaten, aktuelle Öffnungszeiten, Beschreibung, Fotos, Links zu Ihrer Website und Ihren Netzwerken.</p></div>
     <div class="svc"><span class="code">SOZIALE NETZWERKE</span><h3>Instagram, Facebook, TikTok</h3><p>Erstellung oder Optimierung Ihrer Profile, grundlegendes visuelles Erscheinungsbild, Grafiken und Kurzvideos.</p></div>
+    <div class="svc"><span class="code">MOBILE APP</span><h3>Eine App für iPhone und Android</h3><p>Konzeption, Entwicklung und Veröffentlichung im App Store und bei Google Play. Wird im Einzelfall geprüft, Preis auf Anfrage.</p></div>
     <div class="svc"><span class="code">WARTUNG</span><h3>Eine Website, die aktuell bleibt</h3><p>Hosting, Backups, Updates und Änderungen Ihrer Angaben – jeden Monat.</p></div>
   </div>
 </div></section>
@@ -254,22 +308,22 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
   <div class="packs">
     <article class="pack">
       <span class="eyebrow">Pack Digital Start</span><h3>Ihre erste Website</h3><p class="for">Für ein kleines Unternehmen, das noch keine Website hat.</p>
-      <div class="price"><span class="now">690 €</span></div>
-      <p class="launch"><b>Einführungspreis: 490 €</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
+      <div class="price"><span class="now">490 €</span><span class="was">690 €</span></div>
+      <p class="launch"><b>Einführungspreis</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
       <ul><li>Einseitige Website (5 Abschnitte)</li><li>Leistungen, Kontaktdaten, Öffnungszeiten, Anfahrtsplan</li><li>Kontaktformular und WhatsApp</li><li>Mobile Version</li><li>Domain und Hosting im 1. Jahr</li></ul>
       <p class="meta">Lieferung in 7 Werktagen nach Erhalt Ihrer Inhalte · 2 Korrekturschleifen</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital Business</span><h3>Ihre Präsenz ausbauen</h3><p class="for">Um mehrere Leistungen vorzustellen und vor Ort besser gefunden zu werden.</p>
-      <div class="price"><span class="now">1 290 €</span></div>
-      <p class="launch"><b>Einführungspreis: 990 €</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
+      <div class="price"><span class="now">990 €</span><span class="was">1 290 €</span></div>
+      <p class="launch"><b>Einführungspreis</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
       <ul><li>Professionelle Website mit bis zu 5 Seiten</li><li>Galerie und Kontaktformular</li><li>Optimierung Ihres Google-Unternehmensprofils</li><li>Einbindung Ihrer sozialen Netzwerke</li><li>1 Std. Einweisung</li></ul>
       <p class="meta">Lieferung in 15 Werktagen nach Erhalt Ihrer Inhalte · 2 Korrekturschleifen</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital + Social</span><h3>Website und Netzwerke zusammen</h3><p class="for">Um Ihre Website und aktive soziale Netzwerke gleichzeitig zu starten.</p>
-      <div class="price"><span class="now">1 690 €</span></div>
-      <p class="launch"><b>Einführungspreis: 1.390 €</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
+      <div class="price"><span class="now">1.390 €</span><span class="was">1 690 €</span></div>
+      <p class="launch"><b>Einführungspreis</b> für unsere ersten 5 Kunden, bis zum 31.12.2026.</p>
       <ul><li>Einfache oder professionelle Website</li><li>2 Netzwerke erstellt oder optimiert</li><li>Grundlegendes visuelles Erscheinungsbild</li><li>8 Grafiken und 2 Kurzvideos</li><li>1 Monat Beratung zum Veröffentlichen</li></ul>
       <p class="meta">Lieferung in 20 Werktagen nach Erhalt Ihrer Inhalte · 2 Korrekturschleifen</p>
     </article>
