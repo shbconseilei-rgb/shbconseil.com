@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="el">
+<html data-theme="light" lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,31 +14,32 @@
 <link rel="alternate" hreflang="pt" href="https://shbconseil.com/pt/">
 <link rel="alternate" hreflang="ar" href="https://shbconseil.com/ar/">
 <link rel="alternate" hreflang="x-default" href="https://shbconseil.com/">
-<meta property="og:title" content="SHB CONSEIL — Ιστότοποι για καταστήματα και τεχνίτες">
-<meta property="og:description" content="Ιστότοποι παρουσίασης, προφίλ Google και μέσα κοινωνικής δικτύωσης για τοπικές επιχειρήσεις. Créteil (Γαλλία).">
+<meta property="og:title" content="Κατασκευή ιστοσελίδων για μικρές επιχειρήσεις — SHB CONSEIL">
+<meta property="og:description" content="Η SHB CONSEIL κατασκευάζει ιστοσελίδες και εφαρμογές κινητών και βελτιώνει την διαδικτυακή παρουσία μικρών επιχειρήσεων. Καθαρές τιμές, 13 πρότυπα.">
 <meta property="og:url" content="https://shbconseil.com/el/">
 <meta property="og:locale" content="el_GR">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://shbconseil.com/favicon.png">
-<title>SHB CONSEIL</title>
-<meta name="description" content="SHB CONSEIL — ιστότοποι παρουσίασης, προφίλ Google και μέσα κοινωνικής δικτύωσης για καταστήματα, τεχνίτες και ελεύθερους επαγγελματίες. Créteil (Γαλλία).">
+<meta property="og:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Κατασκευή ιστοσελίδων για μικρές επιχειρήσεις — SHB CONSEIL">
+<meta name="twitter:description" content="Η SHB CONSEIL κατασκευάζει ιστοσελίδες και εφαρμογές κινητών και βελτιώνει την διαδικτυακή παρουσία μικρών επιχειρήσεων. Καθαρές τιμές, 13 πρότυπα.">
+<meta name="twitter:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<title>Κατασκευή ιστοσελίδων για μικρές επιχειρήσεις — SHB CONSEIL</title>
+<meta name="description" content="Η SHB CONSEIL κατασκευάζει ιστοσελίδες και εφαρμογές κινητών και βελτιώνει την διαδικτυακή παρουσία μικρών επιχειρήσεων. Καθαρές τιμές, 13 πρότυπα.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap">
 <style>
 :root{
+  color-scheme:light;
   --ground:#F3F7F8; --surface:#FFFFFF; --ink:#0B2238; --muted:#4A5B6B; --line:#D6E1E6;
   --navy:#073C6D; --teal:#11979D; --teal-ink:#0B6F74; --tint:#E3F2F3; --warm:#F2A541;
   --ok:#1B7F4B; --no:#B4412F; --logo-n:#073C6D; --logo-t:#11979D; --on-navy:#FFFFFF;
   --display:"Poppins","Noto Sans","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Noto Sans","Segoe UI",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}}
-:root[data-theme="dark"]{
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
@@ -79,7 +80,7 @@ nav{display:flex;gap:22px;font-size:.95rem} nav a{color:var(--muted);text-decora
 section{padding-block:64px}
 .sec-head{display:grid;gap:10px;max-width:40em;margin-bottom:32px}
 .sec-head p{color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .svc{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
 .svc h3{font-size:1.08rem;font-weight:600}
 .svc p{color:var(--muted);font-size:.97rem}
@@ -91,6 +92,7 @@ section{padding-block:64px}
 .pack h3{font-size:1.2rem;font-weight:600}
 .pack .for{color:var(--muted);font-size:.95rem}
 .price{font-family:var(--display);font-variant-numeric:tabular-nums}
+.price .was{font-size:.46em;font-weight:600;color:var(--muted);text-decoration:line-through;margin-inline-start:10px;vertical-align:.18em}
 .price .now{font-size:2rem;font-weight:700;color:var(--ink)} .price .unit{font-size:.9rem;color:var(--muted)}
 .launch{font-size:.88rem;background:var(--tint);color:var(--ink);border-radius:10px;padding:8px 12px}
 .launch b{color:var(--teal-ink)}
@@ -135,8 +137,8 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .extras-cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 .xitem{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .xitem b{font-weight:600} .xitem span{color:var(--muted);font-size:.88rem;display:block} .xitem .p{font-family:var(--display);font-weight:600;white-space:nowrap;color:var(--teal-ink)}
-@media (max-width:900px){.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} nav{display:none}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
+@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} header.top .wrap{flex-wrap:wrap;column-gap:8px;row-gap:6px;padding-block:9px}.top .brand{gap:7px}.top .brand svg{height:26px}.top .brand b,.top .brand span{font-size:.95rem}.top .lang summary{padding:5px 9px;font-size:.85rem}.top .btn.primary{padding:8px 12px;font-size:.88rem}nav{display:flex;order:5;width:100%;gap:18px;overflow-x:auto;padding-top:10px;margin-top:2px;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;padding-block:2px}}
+@media (max-width:520px){.services{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 
 .lang{position:relative}
@@ -147,6 +149,53 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .lang .menu a{padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink)} .lang .menu a:hover{background:var(--tint)} .lang .menu a[aria-current]{font-weight:700;color:var(--teal-ink)}
 .langs-foot{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 10px} .langs-foot a{color:inherit}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "SHB CONSEIL EI",
+ "alternateName": "SHB CONSEIL",
+ "url": "https://shbconseil.com/el/",
+ "image": "https://shbconseil.com/img/og-shbconseil.png",
+ "logo": "https://shbconseil.com/img/og-shbconseil.png",
+ "email": "shbconseilei@gmail.com",
+ "telephone": "+33759836620",
+ "founder": {
+  "@type": "Person",
+  "name": "Souhaib Zarrouk"
+ },
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Créteil",
+  "postalCode": "94000",
+  "addressCountry": "FR"
+ },
+ "areaServed": "Worldwide",
+ "availableLanguage": [
+  "fr",
+  "en",
+  "es",
+  "it",
+  "de",
+  "el",
+  "pt",
+  "ar"
+ ],
+ "knowsAbout": [
+  "création de site internet",
+  "site vitrine",
+  "présence locale",
+  "réseaux sociaux",
+  "application mobile"
+ ],
+ "vatID": "TVA non applicable, art. 293 B du CGI",
+ "identifier": {
+  "@type": "PropertyValue",
+  "name": "SIRET",
+  "value": "94515423500010"
+ }
+}
+</script>
 </head>
 <body>
 
@@ -191,7 +240,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 </div></section>
 
 <section id="catalogue"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Κατάλογος</span><h2>Επιλέξτε το πρότυπο ιστότοπου που ταιριάζει στη δραστηριότητά σας</h2><p>Δώδεκα πρότυπα για να ξεκινήσετε, το καθένα προσαρμοσμένο με τα δικά σας κείμενα, φωτογραφίες, ωράριο και χρώματα. Κάντε κλικ στο «Δείτε το παράδειγμα» για να περιηγηθείτε σε έναν ολοκληρωμένο ιστότοπο.</p></div>
+  <div class="sec-head"><span class="eyebrow">Κατάλογος</span><h2>Επιλέξτε το πρότυπο ιστότοπου που ταιριάζει στη δραστηριότητά σας</h2><p>Δεκατρία πρότυπα για να ξεκινήσετε, το καθένα προσαρμοσμένο με τα δικά σας κείμενα, φωτογραφίες, ωράριο και χρώματα. Κάντε κλικ στο «Δείτε το παράδειγμα» για να περιηγηθείτε σε έναν ολοκληρωμένο ιστότοπο.</p></div>
   <div class="cat">
     <article class="model"><div class="shot"><img src="/img/coif-thumb-2.jpg" alt="Προεπισκόπηση του προτύπου κομμωτηρίου" loading="lazy"><span class="lbl">Κομμωτήρια & ομορφιά</span></div>
       <div class="body"><h3>Πρότυπο Κομμωτήριο</h3><p class="for">Για: κομμωτήρια, κουρεία, κέντρα αισθητικής, κέντρα περιποίησης νυχιών</p><ul><li>Υπηρεσίες και τιμές</li><li>Κουμπί κράτησης ραντεβού</li><li>Γκαλερί εργασιών</li><li>Ωράριο «ανοιχτά τώρα»</li></ul>
@@ -212,8 +261,11 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
       <div class="body"><h3>Πρότυπο Ευεξία</h3><p class="for">Για: προπονητές, στούντιο γιόγκα, θεραπευτές μασάζ (μη ιατρικό)</p><ul><li>Μαθήματα, συνεδρίες και τιμές</li><li>Κράτηση συνεδρίας</li><li>Εβδομαδιαίο πρόγραμμα</li><li>Γκαλερί του στούντιο</li></ul>
       <div class="foot"><span class="from"><b>από 490 €</b><small>αντί για 690 € · εισαγωγική τιμή</small></span><a class="btn primary small" href="exemple.html#bienetre">Δείτε το παράδειγμα</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/341598704e.jpg" alt="Προεπισκόπηση του προτύπου ξενώνα" loading="lazy"><span class="lbl">Φιλοξενία</span></div>
-      <div class="body"><h3>Πρότυπο Ξενώνας</h3><p class="for">Για: ξενώνες, δωμάτια με πρωινό, μικρά ξενοδοχεία</p><ul><li>Δωμάτια με φωτογραφίες και τιμές</li><li>Αίτημα κράτησης</li><li>Σύνδεσμος προς την πλατφόρμα σας</li><li>Πρόσβαση και δραστηριότητες στην περιοχή</li></ul>
+      <div class="body"><h3>Πρότυπο Ξενώνας</h3><p class="for">Για: ξενώνες, δωμάτια με πρωινό, εποχιακές μισθώσεις</p><ul><li>Δωμάτια με φωτογραφίες και τιμές</li><li>Αίτημα κράτησης</li><li>Σύνδεσμος προς την πλατφόρμα σας</li><li>Πρόσβαση και δραστηριότητες στην περιοχή</li></ul>
       <div class="foot"><span class="from"><b>από 490 €</b><small>αντί για 690 € · εισαγωγική τιμή</small></span><a class="btn primary small" href="exemple.html#gite">Δείτε το παράδειγμα</a></div></div></article>
+    <article class="model"><div class="shot"><img src="/img/c5fab289c5.jpg" alt="Προεπισκόπηση του προτύπου ξενοδοχείου" loading="lazy"><span class="lbl">Ξενοδοχεία</span></div>
+      <div class="body"><h3>Πρότυπο Ξενοδοχείο</h3><p class="for">Για: ξενοδοχεία, ξενοδοχειακά διαμερίσματα, ξενοδοχεία-εστιατόρια</p><ul><li>Δωμάτια, παροχές και τιμές</li><li>Αίτημα απευθείας κράτησης</li><li>Υπηρεσίες: πρωινό, πάρκινγκ, ευεξία</li><li>Πρόσβαση, χάρτης και χρήσιμες πληροφορίες</li></ul>
+      <div class="foot"><span class="from"><b>από 490 €</b><small>αντί για 690 € · εισαγωγική τιμή</small></span><a class="btn primary small" href="exemple.html#hotel">Δείτε το παράδειγμα</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/e600f42afe.jpg" alt="Προεπισκόπηση του προτύπου υπηρεσιών κατ' οίκον" loading="lazy"><span class="lbl">Υπηρεσίες κατ' οίκον</span></div>
       <div class="body"><h3>Πρότυπο Υπηρεσίες</h3><p class="for">Για: καθαρισμό, κηπουρική, μικροεπισκευές</p><ul><li>Υπηρεσίες και περιοχή εξυπηρέτησης</li><li>Αίτημα προσφοράς</li><li>Σαφείς ωριαίες χρεώσεις</li><li>Απευθείας κλήση με ένα κλικ</li></ul>
       <div class="foot"><span class="from"><b>από 490 €</b><small>αντί για 690 € · εισαγωγική τιμή</small></span><a class="btn primary small" href="exemple.html#domicile">Δείτε το παράδειγμα</a></div></div></article>
@@ -235,6 +287,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="xitem"><div><b>Μέσα κοινωνικής δικτύωσης</b><span>Δημιουργία ή αναβάθμιση 2 προφίλ</span></div><span class="p">190 €</span></div>
     <div class="xitem"><div><b>Ηλεκτρονική κράτηση / ραντεβού</b><span>Επιπλέον λειτουργία για τον ιστότοπό σας</span></div><span class="p">+150 €</span></div>
     <div class="xitem"><div><b>Ηλεκτρονικό μενού ή κατάλογος</b><span>Μενού εστιατορίου ή προϊόντα</span></div><span class="p">από +120 €</span></div>
+    <div class="xitem"><div><b>Εφαρμογή για κινητά</b><span>iPhone και Android, δημοσιευμένη στο App Store και στο Google Play</span></div><span class="p">κατόπιν προσφοράς</span></div>
   </div>
   <p class="cat-note">Παραδείγματα με φανταστικές επιχειρήσεις και ενδεικτικές φωτογραφίες (Unsplash). Καθαρές τιμές, ΦΠΑ μη εφαρμοστέος (άρθρο 293 B του γαλλικού Κώδικα Φορολογίας, CGI).</p>
 </div></section>
@@ -246,6 +299,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="svc"><span class="code">ΕΠΑΓΓΕΛΜΑΤΙΚΟΣ ΙΣΤΟΤΟΠΟΣ</span><h3>Περισσότερες σελίδες, περισσότερες λεπτομέρειες</h3><p>Εξατομικευμένος σχεδιασμός, κλείσιμο ραντεβού, κρατήσεις, μενού ή κατάλογος ανάλογα με τη δραστηριότητά σας.</p></div>
     <div class="svc"><span class="code">ΤΟΠΙΚΗ ΠΑΡΟΥΣΙΑ</span><h3>Ένα προσεγμένο προφίλ Google</h3><p>Συνεπή στοιχεία επικοινωνίας, ενημερωμένο ωράριο, περιγραφή, φωτογραφίες, σύνδεσμοι προς τον ιστότοπο και τα μέσα κοινωνικής δικτύωσής σας.</p></div>
     <div class="svc"><span class="code">ΜΕΣΑ ΚΟΙΝΩΝΙΚΗΣ ΔΙΚΤΥΩΣΗΣ</span><h3>Instagram, Facebook, TikTok</h3><p>Δημιουργία ή βελτιστοποίηση των προφίλ σας, βασική οπτική ταυτότητα, γραφικά και σύντομα βίντεο.</p></div>
+    <div class="svc"><span class="code">ΕΦΑΡΜΟΓΗ ΓΙΑ ΚΙΝΗΤΑ</span><h3>Μια εφαρμογή για iPhone και Android</h3><p>Σχεδιασμός, ανάπτυξη και δημοσίευση στο App Store και στο Google Play. Εξετάζεται κατά περίπτωση, κατόπιν προσφοράς.</p></div>
     <div class="svc"><span class="code">ΣΥΝΤΗΡΗΣΗ</span><h3>Ένας ιστότοπος πάντα ενημερωμένος</h3><p>Φιλοξενία, αντίγραφα ασφαλείας, ενημερώσεις και αλλαγές στα στοιχεία σας κάθε μήνα.</p></div>
   </div>
 </div></section>
@@ -255,22 +309,22 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
   <div class="packs">
     <article class="pack">
       <span class="eyebrow">Pack Digital Start</span><h3>Ο πρώτος σας ιστότοπος</h3><p class="for">Για μια μικρή επιχείρηση που δεν έχει ακόμη ιστότοπο.</p>
-      <div class="price"><span class="now">690 €</span></div>
-      <p class="launch"><b>Εισαγωγική τιμή: 490 €</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
+      <div class="price"><span class="now">490 €</span><span class="was">690 €</span></div>
+      <p class="launch"><b>Εισαγωγική τιμή</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
       <ul><li>Ιστότοπος παρουσίασης μίας σελίδας (5 ενότητες)</li><li>Υπηρεσίες, στοιχεία επικοινωνίας, ωράριο, χάρτης</li><li>Φόρμα επικοινωνίας και WhatsApp</li><li>Έκδοση για κινητά</li><li>Όνομα τομέα (domain) και φιλοξενία για τον 1ο χρόνο</li></ul>
       <p class="meta">Παράδοση σε 7 εργάσιμες ημέρες από την παραλαβή του περιεχομένου σας · 2 αναθεωρήσεις</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital Business</span><h3>Αναπτύξτε την παρουσία σας</h3><p class="for">Για να παρουσιάσετε περισσότερες υπηρεσίες και να σας βρίσκουν πιο εύκολα τοπικά.</p>
-      <div class="price"><span class="now">1 290 €</span></div>
-      <p class="launch"><b>Εισαγωγική τιμή: 990 €</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
+      <div class="price"><span class="now">990 €</span><span class="was">1 290 €</span></div>
+      <p class="launch"><b>Εισαγωγική τιμή</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
       <ul><li>Επαγγελματικός ιστότοπος έως 5 σελίδων</li><li>Γκαλερί και φόρμα επικοινωνίας</li><li>Βελτιστοποίηση του προφίλ σας στο Google</li><li>Ενσωμάτωση των μέσων κοινωνικής δικτύωσής σας</li><li>1 ώρα εκπαίδευσης στη χρήση</li></ul>
       <p class="meta">Παράδοση σε 15 εργάσιμες ημέρες από την παραλαβή του περιεχομένου σας · 2 αναθεωρήσεις</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital + Social</span><h3>Ιστότοπος και μέσα δικτύωσης μαζί</h3><p class="for">Για να ξεκινήσετε ταυτόχρονα τον ιστότοπό σας και ενεργά μέσα κοινωνικής δικτύωσης.</p>
-      <div class="price"><span class="now">1 690 €</span></div>
-      <p class="launch"><b>Εισαγωγική τιμή: 1.390 €</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
+      <div class="price"><span class="now">1.390 €</span><span class="was">1 690 €</span></div>
+      <p class="launch"><b>Εισαγωγική τιμή</b> για τους 5 πρώτους πελάτες μας, έως τις 31/12/2026.</p>
       <ul><li>Ιστότοπος παρουσίασης ή επαγγελματικός</li><li>2 προφίλ κοινωνικής δικτύωσης, νέα ή βελτιστοποιημένα</li><li>Βασική οπτική ταυτότητα</li><li>8 γραφικά και 2 σύντομα βίντεο</li><li>1 μήνας συμβουλών για τις δημοσιεύσεις</li></ul>
       <p class="meta">Παράδοση σε 20 εργάσιμες ημέρες από την παραλαβή του περιεχομένου σας · 2 αναθεωρήσεις</p>
     </article>
