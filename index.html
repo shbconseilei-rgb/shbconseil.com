@@ -111,7 +111,7 @@ section{padding-block:64px}
 .sectors span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.95rem}
 .principle{margin-top:28px;max-width:44em;font-size:1.1rem;border-left:4px solid var(--teal);padding-left:18px;color:var(--ink)}
 .contact{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-.contact .ways{display:grid;gap:12px}
+.contact .cform{display:grid;gap:12px}.cform h3{font-size:1.05rem;margin:0 0 2px}.cform label{display:grid;gap:5px;font-size:.88rem;color:var(--muted);font-weight:600}.cform input,.cform textarea{font:inherit;font-size:.95rem;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%}.cform textarea{min-height:88px;resize:vertical}.cform input:focus,.cform textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}.cform .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cform button{font:inherit;font-weight:700;cursor:pointer;border:0;border-radius:999px;background:var(--teal);color:#fff;padding:13px 22px;font-size:1rem}.cform button:hover{background:var(--teal-ink)}.cform .rgpd{font-size:.8rem;color:var(--muted);font-weight:400}.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.ways-t{font-size:.85rem;color:var(--muted);margin:18px 0 10px;font-weight:600}@media (max-width:520px){.cform .duo{grid-template-columns:1fr}}.contact{align-items:start}.contact>.sec-head{grid-column:1}.contact>.cform-wrap{grid-column:2;grid-row:1/span 3}.contact>.ways-t{grid-column:1;margin:4px 0 10px}.contact>.ways{grid-column:1}.ways{display:grid;gap:12px}
 .contact .ways a{display:flex;justify-content:space-between;gap:12px;align-items:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-weight:600}
 .contact .ways a span{color:var(--muted);font-weight:400;font-size:.92rem}
 .contact .ways a:hover{border-color:var(--teal)}
@@ -136,7 +136,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .extras-cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 .xitem{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .xitem b{font-weight:600} .xitem span{color:var(--muted);font-size:.88rem;display:block} .xitem .p{font-family:var(--display);font-weight:600;white-space:nowrap;color:var(--teal-ink)}
-@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} header.top .wrap{flex-wrap:wrap;column-gap:8px;row-gap:6px;padding-block:9px}.top .brand{gap:7px}.top .brand svg{height:26px}.top .brand b,.top .brand span{font-size:.95rem}.top .lang summary{padding:5px 9px;font-size:.85rem}.top .btn.primary{padding:8px 12px;font-size:.88rem}nav{display:flex;order:5;width:100%;gap:18px;overflow-x:auto;padding-top:10px;margin-top:2px;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;padding-block:2px}}
+@media (max-width:900px){.contact>.sec-head,.contact>.cform-wrap,.contact>.ways-t,.contact>.ways{grid-column:1;grid-row:auto}.services{grid-template-columns:repeat(2,1fr)}.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} header.top .wrap{flex-wrap:wrap;column-gap:8px;row-gap:6px;padding-block:9px}.top .brand{gap:7px}.top .brand svg{height:26px}.top .brand b,.top .brand span{font-size:.95rem}.top .lang summary{padding:5px 9px;font-size:.85rem}.top .btn.primary{padding:8px 12px;font-size:.88rem}nav{display:flex;order:5;width:100%;gap:18px;overflow-x:auto;padding-top:10px;margin-top:2px;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;padding-block:2px}}
 @media (max-width:520px){.services{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 
@@ -392,6 +392,29 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 <section id="contact"><div class="wrap">
   <div class="contact">
     <div class="sec-head" style="margin:0"><span class="eyebrow">Contact</span><h2>Parlons de votre entreprise</h2><p>Dites-nous qui vous êtes et ce que vous avez déjà en ligne. Nous vous répondons avec un premier diagnostic, sans engagement.</p></div>
+    <div class="cform-wrap">
+    <form class="cform" action="https://formsubmit.co/shbconseilei@gmail.com" method="POST">
+      <h3>Décrivez votre besoin</h3>
+      <div class="duo">
+        <label>Votre nom<input type="text" name="Nom" required autocomplete="name"></label>
+        <label>Nom de l'entreprise<input type="text" name="Entreprise" autocomplete="organization"></label>
+      </div>
+      <div class="duo">
+        <label>Ville<input type="text" name="Ville" autocomplete="address-level2"></label>
+        <label>Votre e-mail<input type="email" name="Email" required autocomplete="email"></label>
+      </div>
+      <label>Qu'avez-vous déjà en ligne ? (site, fiche Google, réseaux sociaux)<textarea name="Message" required></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Ne pas remplir<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="_subject" value="Demande depuis shbconseil.com (fr)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://shbconseil.com/merci.html?l=fr">
+      <input type="hidden" name="Langue" value="fr">
+      <input type="hidden" name="Provenance" id="src" value="direct">
+      <button type="submit">Envoyer ma demande</button>
+      <p class="rgpd">Réponse sous 24 h ouvrées. Vos informations servent uniquement à vous répondre.</p>
+    </form>
+    </div>
+    <p class="ways-t">ou écrivez-nous directement</p>
     <div class="ways">
       <a href="https://wa.me/33759836620">WhatsApp <span>07 59 83 66 20</span></a>
       <a href="tel:+33759836620">Téléphone <span>07 59 83 66 20</span></a>
@@ -414,5 +437,6 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
   </div></details>
 </div></footer>
 
+<script>(function(){var e=document.getElementById("src");if(!e)return;var p=new URLSearchParams(location.search),s=p.get("utm_source")||p.get("src")||"";if(!s&&document.referrer){try{s=new URL(document.referrer).hostname}catch(x){}}if(s)e.value=s;})();</script>
 </body>
 </html>

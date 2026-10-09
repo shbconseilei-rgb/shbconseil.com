@@ -1,0 +1,48 @@
+<!doctype html>
+<html data-theme="light" lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Merci — SHB CONSEIL</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:wght@400&display=swap">
+<style>
+:root{color-scheme:light;--navy:#073C6D;--teal:#11979D;--ink:#0B2238;--muted:#4A5B6B;--ground:#F3F7F8;--surface:#fff;--line:#D6E1E6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--ground);color:var(--ink);
+ font:17px/1.6 "Source Sans 3","Segoe UI",system-ui,sans-serif;padding:28px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:44px 38px;max-width:560px;text-align:center}
+.mark{width:58px;height:58px;border-radius:50%;background:#E3F2F3;display:grid;place-items:center;margin:0 auto 20px}
+.mark svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+h1{font-family:"Poppins",system-ui,sans-serif;font-size:clamp(22px,4vw,28px);line-height:1.2;margin:0 0 10px;color:var(--navy)}
+p{color:var(--muted);margin:0 0 26px}
+a.btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;
+ padding:12px 26px;border-radius:999px}
+a.btn:hover{background:#0A4E88}
+.sig{margin-top:24px;font-size:.85rem;color:var(--muted)}
+[dir=rtl] body{direction:rtl}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+  <h1 id="m">Merci, votre message est parti. Nous vous répondons sous 24 h ouvrées.</h1>
+  <p id="s">SHB CONSEIL EI</p>
+  <a class="btn" id="r" href="/">Retour au site</a>
+  <p class="sig">shbconseilei@gmail.com · 07 59 83 66 20</p>
+</div>
+<script>
+var T = {"fr": {"m": "Merci, votre message est parti. Nous vous répondons sous 24 h ouvrées.", "r": "Retour au site"}, "en": {"m": "Thank you, your message has been sent. We will reply within one working day.", "r": "Back to the website"}, "es": {"m": "Gracias, su mensaje se ha enviado. Le respondemos en 24 h laborables.", "r": "Volver a la web"}, "it": {"m": "Grazie, il messaggio è stato inviato. Vi rispondiamo entro 24 h lavorative.", "r": "Torna al sito"}, "de": {"m": "Danke, Ihre Nachricht wurde gesendet. Wir antworten innerhalb eines Werktags.", "r": "Zurück zur Website"}, "el": {"m": "Ευχαριστούμε, το μήνυμά σας στάλθηκε. Απαντάμε εντός μίας εργάσιμης ημέρας.", "r": "Επιστροφή στον ιστότοπο"}, "pt": {"m": "Obrigado, a sua mensagem foi enviada. Respondemos em 24 h úteis.", "r": "Voltar ao site"}, "ar": {"m": "شكرًا، تم إرسال رسالتك. نردّ عليك خلال يوم عمل واحد.", "r": "العودة إلى الموقع"}};
+var p = new URLSearchParams(location.search).get("l") || "fr";
+if (!T[p]) p = "fr";
+document.documentElement.lang = p;
+if (p === "ar") document.documentElement.dir = "rtl";
+document.getElementById("m").textContent = T[p].m;
+document.getElementById("r").textContent = T[p].r;
+document.getElementById("r").href = (p === "fr" ? "/" : "/" + p + "/");
+</script>
+</body>
+</html>
