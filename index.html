@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html data-theme="light" lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,30 +14,31 @@
 <link rel="alternate" hreflang="pt" href="https://shbconseil.com/pt/">
 <link rel="alternate" hreflang="ar" href="https://shbconseil.com/ar/">
 <link rel="alternate" hreflang="x-default" href="https://shbconseil.com/">
-<meta property="og:title" content="SHB CONSEIL — Sites internet pour commerces et artisans">
-<meta property="og:description" content="Sites vitrines, fiche Google et réseaux sociaux pour les entreprises locales. Créteil (94).">
+<meta property="og:title" content="Création de site internet pour commerces et artisans — SHB CONSEIL">
+<meta property="og:description" content="SHB CONSEIL crée des sites vitrines, des applications mobiles et optimise la présence en ligne des commerces, artisans et indépendants. Prix affichés, 13 modèles par métier.">
 <meta property="og:url" content="https://shbconseil.com/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://shbconseil.com/favicon.png">
-<title>SHB CONSEIL</title>
-<meta name="description" content="SHB CONSEIL — sites vitrines, fiche Google et réseaux sociaux pour commerces, artisans et indépendants. Créteil (94).">
+<meta property="og:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Création de site internet pour commerces et artisans — SHB CONSEIL">
+<meta name="twitter:description" content="SHB CONSEIL crée des sites vitrines, des applications mobiles et optimise la présence en ligne des commerces, artisans et indépendants. Prix affichés, 13 modèles par métier.">
+<meta name="twitter:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<title>Création de site internet pour commerces et artisans — SHB CONSEIL</title>
+<meta name="description" content="SHB CONSEIL crée des sites vitrines, des applications mobiles et optimise la présence en ligne des commerces, artisans et indépendants. Prix affichés, 13 modèles par métier.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 :root{
+  color-scheme:light;
   --ground:#F3F7F8; --surface:#FFFFFF; --ink:#0B2238; --muted:#4A5B6B; --line:#D6E1E6;
   --navy:#073C6D; --teal:#11979D; --teal-ink:#0B6F74; --tint:#E3F2F3; --warm:#F2A541;
   --ok:#1B7F4B; --no:#B4412F; --logo-n:#073C6D; --logo-t:#11979D; --on-navy:#FFFFFF;
   --display:"Poppins","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}}
-:root[data-theme="dark"]{
-  --ground:#08182A; --surface:#0E2438; --ink:#E7EEF3; --muted:#A7B7C4; --line:#1F3A52;
-  --navy:#0E3F6E; --teal:#3CC1C6; --teal-ink:#6FD6DA; --tint:#123247; --ok:#5FD39A; --no:#F08A76; --logo-n:#E7EEF3; --logo-t:#3CC1C6;}
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
@@ -78,7 +79,7 @@ nav{display:flex;gap:22px;font-size:.95rem} nav a{color:var(--muted);text-decora
 section{padding-block:64px}
 .sec-head{display:grid;gap:10px;max-width:40em;margin-bottom:32px}
 .sec-head p{color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .svc{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
 .svc h3{font-size:1.08rem;font-weight:600}
 .svc p{color:var(--muted);font-size:.97rem}
@@ -90,6 +91,7 @@ section{padding-block:64px}
 .pack h3{font-size:1.2rem;font-weight:600}
 .pack .for{color:var(--muted);font-size:.95rem}
 .price{font-family:var(--display);font-variant-numeric:tabular-nums}
+.price .was{font-size:.46em;font-weight:600;color:var(--muted);text-decoration:line-through;margin-inline-start:10px;vertical-align:.18em}
 .price .now{font-size:2rem;font-weight:700;color:var(--ink)} .price .unit{font-size:.9rem;color:var(--muted)}
 .launch{font-size:.88rem;background:var(--tint);color:var(--ink);border-radius:10px;padding:8px 12px}
 .launch b{color:var(--teal-ink)}
@@ -134,8 +136,8 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .extras-cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 .xitem{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .xitem b{font-weight:600} .xitem span{color:var(--muted);font-size:.88rem;display:block} .xitem .p{font-family:var(--display);font-weight:600;white-space:nowrap;color:var(--teal-ink)}
-@media (max-width:900px){.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} nav{display:none}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
+@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}.hero .wrap,.contact{grid-template-columns:1fr}.packs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr} header.top .wrap{flex-wrap:wrap;column-gap:8px;row-gap:6px;padding-block:9px}.top .brand{gap:7px}.top .brand svg{height:26px}.top .brand b,.top .brand span{font-size:.95rem}.top .lang summary{padding:5px 9px;font-size:.85rem}.top .btn.primary{padding:8px 12px;font-size:.88rem}nav{display:flex;order:5;width:100%;gap:18px;overflow-x:auto;padding-top:10px;margin-top:2px;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;padding-block:2px}}
+@media (max-width:520px){.services{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{padding:22px}.hero{padding-block:40px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 
 .lang{position:relative}
@@ -146,6 +148,85 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 .lang .menu a{padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink)} .lang .menu a:hover{background:var(--tint)} .lang .menu a[aria-current]{font-weight:700;color:var(--teal-ink)}
 .langs-foot{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 10px} .langs-foot a{color:inherit}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "SHB CONSEIL EI",
+ "alternateName": "SHB CONSEIL",
+ "url": "https://shbconseil.com/",
+ "image": "https://shbconseil.com/img/og-shbconseil.png",
+ "logo": "https://shbconseil.com/img/og-shbconseil.png",
+ "email": "shbconseilei@gmail.com",
+ "telephone": "+33759836620",
+ "founder": {
+  "@type": "Person",
+  "name": "Souhaib Zarrouk"
+ },
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Créteil",
+  "postalCode": "94000",
+  "addressCountry": "FR"
+ },
+ "areaServed": "Worldwide",
+ "availableLanguage": [
+  "fr",
+  "en",
+  "es",
+  "it",
+  "de",
+  "el",
+  "pt",
+  "ar"
+ ],
+ "knowsAbout": [
+  "création de site internet",
+  "site vitrine",
+  "présence locale",
+  "réseaux sociaux",
+  "application mobile"
+ ],
+ "vatID": "TVA non applicable, art. 293 B du CGI",
+ "identifier": {
+  "@type": "PropertyValue",
+  "name": "SIRET",
+  "value": "94515423500010"
+ },
+ "priceRange": "490 € – 1 690 €",
+ "makesOffer": [
+  {
+   "@type": "Offer",
+   "name": "Pack Digital Start — site vitrine",
+   "price": "490",
+   "priceCurrency": "EUR",
+   "priceValidUntil": "2026-12-31",
+   "availability": "https://schema.org/InStock"
+  },
+  {
+   "@type": "Offer",
+   "name": "Pack Digital Business — site professionnel",
+   "price": "990",
+   "priceCurrency": "EUR",
+   "priceValidUntil": "2026-12-31",
+   "availability": "https://schema.org/InStock"
+  },
+  {
+   "@type": "Offer",
+   "name": "Pack Digital + Social",
+   "price": "1390",
+   "priceCurrency": "EUR",
+   "priceValidUntil": "2026-12-31",
+   "availability": "https://schema.org/InStock"
+  },
+  {
+   "@type": "Offer",
+   "name": "Application mobile iPhone et Android",
+   "availability": "https://schema.org/InStock"
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -189,7 +270,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
 </div></section>
 
 <section id="catalogue"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Catalogue</span><h2>Choisissez le modèle de site adapté à votre activité</h2><p>Douze modèles de départ, chacun personnalisé avec vos textes, vos photos, vos horaires et vos couleurs. Cliquez sur « Voir l'exemple » pour parcourir un site complet.</p></div>
+  <div class="sec-head"><span class="eyebrow">Catalogue</span><h2>Choisissez le modèle de site adapté à votre activité</h2><p>Treize modèles de départ, chacun personnalisé avec vos textes, vos photos, vos horaires et vos couleurs. Cliquez sur « Voir l'exemple » pour parcourir un site complet.</p></div>
   <div class="cat">
     <article class="model"><div class="shot"><img src="/img/coif-thumb-2.jpg" alt="Aperçu du modèle salon" loading="lazy"><span class="lbl">Salon & beauté</span></div>
       <div class="body"><h3>Modèle Salon</h3><p class="for">Pour : Salons de coiffure, barbiers, instituts, ongleries</p><ul><li>Prestations et tarifs</li><li>Bouton de prise de rendez-vous</li><li>Galerie de réalisations</li><li>Horaires « ouvert maintenant »</li></ul>
@@ -210,8 +291,11 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
       <div class="body"><h3>Modèle Bien-être</h3><p class="for">Pour : Coachs sportifs, studios de yoga, masseurs (non médical)</p><ul><li>Cours, séances et tarifs</li><li>Réservation d'une séance</li><li>Planning de la semaine</li><li>Galerie du studio</li></ul>
       <div class="foot"><span class="from"><b>dès 490 €</b><small>au lieu de 690 € · tarif de lancement</small></span><a class="btn primary small" href="exemple.html#bienetre">Voir l'exemple</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/341598704e.jpg" alt="Aperçu du modèle gîte" loading="lazy"><span class="lbl">Hébergement</span></div>
-      <div class="body"><h3>Modèle Gîte</h3><p class="for">Pour : Gîtes, chambres d'hôtes, petits hôtels</p><ul><li>Chambres avec photos et prix</li><li>Demande de réservation</li><li>Lien vers votre plateforme</li><li>Accès et activités autour</li></ul>
+      <div class="body"><h3>Modèle Gîte</h3><p class="for">Pour : Gîtes, chambres d'hôtes, locations saisonnières</p><ul><li>Chambres avec photos et prix</li><li>Demande de réservation</li><li>Lien vers votre plateforme</li><li>Accès et activités autour</li></ul>
       <div class="foot"><span class="from"><b>dès 490 €</b><small>au lieu de 690 € · tarif de lancement</small></span><a class="btn primary small" href="exemple.html#gite">Voir l'exemple</a></div></div></article>
+    <article class="model"><div class="shot"><img src="/img/c5fab289c5.jpg" alt="Aperçu du modèle hôtel" loading="lazy"><span class="lbl">Hôtellerie</span></div>
+      <div class="body"><h3>Modèle Hôtel</h3><p class="for">Pour : Hôtels, résidences, hôtels-restaurants</p><ul><li>Chambres, équipements et tarifs</li><li>Demande de réservation directe</li><li>Services : petit-déjeuner, parking, bien-être</li><li>Accès, plan et informations pratiques</li></ul>
+      <div class="foot"><span class="from"><b>dès 490 €</b><small>au lieu de 690 € · tarif de lancement</small></span><a class="btn primary small" href="exemple.html#hotel">Voir l'exemple</a></div></div></article>
     <article class="model"><div class="shot"><img src="/img/e600f42afe.jpg" alt="Aperçu du modèle services à domicile" loading="lazy"><span class="lbl">Services à domicile</span></div>
       <div class="body"><h3>Modèle Services</h3><p class="for">Pour : Ménage, jardinage, petits travaux</p><ul><li>Services et zone d'intervention</li><li>Demande de devis</li><li>Tarifs horaires clairs</li><li>Appel direct en un clic</li></ul>
       <div class="foot"><span class="from"><b>dès 490 €</b><small>au lieu de 690 € · tarif de lancement</small></span><a class="btn primary small" href="exemple.html#domicile">Voir l'exemple</a></div></div></article>
@@ -233,6 +317,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="xitem"><div><b>Réseaux sociaux</b><span>Création ou mise à niveau de 2 profils</span></div><span class="p">190 €</span></div>
     <div class="xitem"><div><b>Réservation / RDV en ligne</b><span>Option ajoutée à votre site</span></div><span class="p">+150 €</span></div>
     <div class="xitem"><div><b>Menu ou catalogue en ligne</b><span>Carte de restaurant ou produits</span></div><span class="p">dès +120 €</span></div>
+    <div class="xitem"><div><b>Application mobile</b><span>iPhone et Android, publiée sur l’App Store et Google Play</span></div><span class="p">sur devis</span></div>
   </div>
   <p class="cat-note">Exemples réalisés avec des entreprises fictives et des photos d'illustration (Unsplash). Prix nets, TVA non applicable (art. 293 B du CGI).</p>
 </div></section>
@@ -244,6 +329,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
     <div class="svc"><span class="code">SITE PROFESSIONNEL</span><h3>Plusieurs pages, plus de détails</h3><p>Design personnalisé, prise de rendez-vous, réservation, menu ou catalogue selon votre activité.</p></div>
     <div class="svc"><span class="code">PRÉSENCE LOCALE</span><h3>Une fiche Google soignée</h3><p>Coordonnées cohérentes, horaires à jour, description, photos, liens vers votre site et vos réseaux.</p></div>
     <div class="svc"><span class="code">RÉSEAUX SOCIAUX</span><h3>Instagram, Facebook, TikTok</h3><p>Création ou optimisation de vos profils, identité visuelle de base, visuels et vidéos courtes.</p></div>
+    <div class="svc"><span class="code">APPLICATION MOBILE</span><h3>Une application iPhone et Android</h3><p>Conception, développement et publication sur l’App Store et Google Play. Étudiée au cas par cas, sur devis.</p></div>
     <div class="svc"><span class="code">MAINTENANCE</span><h3>Un site qui reste à jour</h3><p>Hébergement, sauvegardes, mises à jour et modifications de vos informations chaque mois.</p></div>
   </div>
 </div></section>
@@ -253,22 +339,22 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
   <div class="packs">
     <article class="pack">
       <span class="eyebrow">Pack Digital Start</span><h3>Votre premier site</h3><p class="for">Pour une petite entreprise qui n'a pas encore de site.</p>
-      <div class="price"><span class="now">690 €</span></div>
-      <p class="launch"><b>Tarif de lancement : 490 €</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
+      <div class="price"><span class="now">490 €</span><span class="was">690 €</span></div>
+      <p class="launch"><b>Tarif de lancement</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
       <ul><li>Site vitrine d'une page (5 sections)</li><li>Services, coordonnées, horaires, plan</li><li>Formulaire de contact et WhatsApp</li><li>Version mobile</li><li>Nom de domaine et hébergement la 1re année</li></ul>
       <p class="meta">Livré en 7 jours ouvrés après réception de vos contenus · 2 révisions</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital Business</span><h3>Développer votre présence</h3><p class="for">Pour présenter plusieurs services et être mieux trouvé localement.</p>
-      <div class="price"><span class="now">1 290 €</span></div>
-      <p class="launch"><b>Tarif de lancement : 990 €</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
+      <div class="price"><span class="now">990 €</span><span class="was">1 290 €</span></div>
+      <p class="launch"><b>Tarif de lancement</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
       <ul><li>Site professionnel jusqu'à 5 pages</li><li>Galerie et formulaire de contact</li><li>Optimisation de votre fiche Google</li><li>Intégration de vos réseaux sociaux</li><li>1 h de prise en main</li></ul>
       <p class="meta">Livré en 15 jours ouvrés après réception de vos contenus · 2 révisions</p>
     </article>
     <article class="pack">
       <span class="eyebrow">Pack Digital + Social</span><h3>Site et réseaux ensemble</h3><p class="for">Pour lancer en même temps votre site et des réseaux sociaux actifs.</p>
-      <div class="price"><span class="now">1 690 €</span></div>
-      <p class="launch"><b>Tarif de lancement : 1 390 €</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
+      <div class="price"><span class="now">1 390 €</span><span class="was">1 690 €</span></div>
+      <p class="launch"><b>Tarif de lancement</b> pour nos 5 premiers clients, jusqu'au 31/12/2026.</p>
       <ul><li>Site vitrine ou professionnel</li><li>2 réseaux créés ou optimisés</li><li>Identité visuelle de base</li><li>8 visuels et 2 vidéos courtes</li><li>1 mois de conseils à la publication</li></ul>
       <p class="meta">Livré en 20 jours ouvrés après réception de vos contenus · 2 révisions</p>
     </article>
@@ -288,7 +374,7 @@ details div{margin-top:10px;display:grid;gap:6px;max-width:60em}
       <tr><td>Contenus réseaux Starter / Social</td><td>290 / 490 €/mois</td></tr>
     </table></div>
   </div>
-  <p class="note">Besoin particulier (catalogue, paiement en ligne, espace client, automatisations) : devis sur mesure. Engagement de 6 mois pour la maintenance.</p>
+  <p class="note">Besoin particulier (catalogue, paiement en ligne, espace client, automatisations, application mobile iPhone et Android) : devis sur mesure. Engagement de 6 mois pour la maintenance.</p>
 </div></section>
 
 <section id="demarche"><div class="wrap">
