@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Régler ma commande — SHB CONSEIL EI</title>
+<meta name="description" content="Payer une commande SHB CONSEIL EI par carte bancaire.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --marine:#073C6D;
+  --teal:#11979D;
+  --encre:#16202B;
+  --douce:#5A6775;
+  --trait:#DCE3EA;
+  --fond:#F4F7F9;
+  --blanc:#FFFFFF;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--fond);color:var(--encre);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%;max-width:720px;margin-inline:auto;padding-inline:20px;padding-block:0}
+a{color:var(--marine)}
+
+header{background:var(--marine);color:#fff;padding-block:22px}
+header .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header .nom{font-weight:700;font-size:18px;letter-spacing:.01em}
+header .nom span{display:block;font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9FC0DC;margin-top:2px}
+header .retour{margin-left:auto;font-size:14px;color:#CBDCEC;text-decoration:none}
+header .retour:hover{color:#fff;text-decoration:underline}
+
+main{padding-block:38px 46px}
+h1{font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0 0 12px}
+.intro{color:var(--douce);font-size:17px;margin:0 0 30px;max-width:60ch}
+
+.carte{background:var(--blanc);border:1px solid var(--trait);border-radius:10px;padding:26px;margin-bottom:18px}
+.carte h2{font-size:19px;margin:0 0 6px;color:var(--marine)}
+.carte p{margin:0 0 16px;color:var(--douce);font-size:15.5px}
+.carte p:last-child{margin-bottom:0}
+
+.bouton{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--teal);color:#fff;text-decoration:none;font-weight:700;font-size:17px;
+  padding:15px 30px;border-radius:7px;transition:background .15s;
+}
+.bouton:hover,.bouton:focus-visible{background:#0E8086}
+.bouton:focus-visible{outline:3px solid var(--marine);outline-offset:2px}
+
+.etapes{margin:0 0 18px;padding-left:20px;color:var(--douce);font-size:15.5px}
+.etapes li{margin-bottom:6px}
+.etapes b{color:var(--encre)}
+
+
+.note{font-size:14px;color:var(--douce);background:#EAF4F5;border-left:3px solid var(--teal);
+  padding:12px 14px;border-radius:0 6px 6px 0;margin-top:16px}
+
+footer{border-top:1px solid var(--trait);margin-top:34px;padding-block:24px 34px;font-size:13.5px;color:var(--douce)}
+footer p{margin:0 0 6px}
+footer strong{color:var(--encre)}
+
+@media (max-width:520px){
+  .bouton{width:100%}
+  .carte{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nom">SHB CONSEIL EI<span>Créteil (94)</span></div>
+    <a class="retour" href="/">Retour au site</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Régler ma commande</h1>
+    <p class="intro">Vous avez reçu un devis ou une facture de SHB CONSEIL&nbsp;EI. Vous pouvez la régler par carte bancaire en quelques secondes.</p>
+
+    <section class="carte">
+      <h2>Par carte bancaire</h2>
+      <p>Paiement sécurisé par Stripe. Vous recevez un reçu par e-mail immédiatement après le paiement.</p>
+      <ol class="etapes">
+        <li>Cliquez sur le bouton ci-dessous.</li>
+        <li>Saisissez le <b>montant exact</b> indiqué sur votre devis ou votre facture.</li>
+        <li>Renseignez votre <b>numéro de devis ou de facture</b> dans le champ prévu — c'est ce qui nous permet de rapprocher votre paiement de votre dossier.</li>
+      </ol>
+      <a class="bouton" href="https://buy.stripe.com/cNi4gzb3b9YUaYs9wgfbq00" target="_blank" rel="noopener">
+        Payer par carte bancaire
+      </a>
+      <p class="note">Nous ne voyons jamais vos coordonnées bancaires : elles sont saisies directement chez Stripe, qui gère le paiement. Aucun frais n'est ajouté à votre montant.</p>
+    </section>
+
+    <section class="carte">
+      <h2>Modalités</h2>
+      <p>
+        Acompte de 40&nbsp;% à la commande, solde à la livraison. Paiement en trois fois sans frais possible au-delà de 400&nbsp;€.
+        Règlement à réception, au plus tard 30&nbsp;jours après émission de la facture.
+      </p>
+      <p>
+        Une question sur votre facture&nbsp;? Écrivez à <a href="mailto:shbconseilei@gmail.com">shbconseilei@gmail.com</a>
+        ou appelez le <a href="tel:+33759836620">07&nbsp;59&nbsp;83&nbsp;66&nbsp;20</a>.
+      </p>
+    </section>
+
+    <footer>
+      <p><strong>SHB CONSEIL EI</strong> — Entreprise individuelle — Créteil (94)</p>
+      <p>SIRET 945 154 235 00010 — APE 7022Z</p>
+      <p>TVA non applicable, art. 293 B du CGI.</p>
+      <p>En cas de retard de paiement&nbsp;: pénalités au taux de la BCE majoré de 10&nbsp;points et indemnité forfaitaire de recouvrement de 40&nbsp;€ (art. L.441-10 et D.441-5 du Code de commerce).</p>
+    </footer>
+  </div>
+</main>
+
+</body>
+</html>
