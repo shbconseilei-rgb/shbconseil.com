@@ -1,0 +1,386 @@
+<!doctype html>
+<html data-theme="light" lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Composer mon devis — SHB CONSEIL</title>
+<meta name="description" content="Composez votre projet et voyez le détail du prix, ligne par ligne : ce qui est compris, ce qui ne l'est pas, et le total à régler.">
+<link rel="canonical" href="https://shbconseil.com/devis.html">
+<meta property="og:title" content="Composer mon devis — SHB CONSEIL">
+<meta property="og:description" content="Le détail du prix, ligne par ligne, avant même de nous écrire.">
+<meta property="og:image" content="https://shbconseil.com/img/og-shbconseil.png">
+<meta property="og:url" content="https://shbconseil.com/devis.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#F3F7F8;--surface:#FFFFFF;--ink:#0B2238;--muted:#4A5B6B;--line:#D6E1E6;
+  --navy:#073C6D;--teal:#11979D;--teal-ink:#0B6F74;--tint:#E3F2F3;--warm:#F2A541;
+  --display:"Poppins","Segoe UI",system-ui,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0}
+a{color:var(--navy)}
+
+header.top{background:var(--navy);color:#fff;padding-block:16px}
+header.top .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:17px;color:#fff;text-decoration:none;letter-spacing:.01em}
+.brand span{color:#6FD6DA}
+header.top .retour{margin-left:auto;font-size:14px;color:#CBDCEC;text-decoration:none}
+header.top .retour:hover{color:#fff;text-decoration:underline}
+
+.hero{padding-block:34px 10px}
+.hero h1{font-size:clamp(26px,4.4vw,36px);color:var(--navy)}
+.hero p{color:var(--muted);max-width:62ch;margin:12px 0 0;font-size:17px}
+
+main{padding-bottom:56px}
+.grid{display:grid;grid-template-columns:1.25fr .85fr;gap:28px;align-items:start;margin-top:26px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px}
+.card h2{font-size:18px;color:var(--navy);margin-bottom:4px}
+.card .sub{color:var(--muted);font-size:14.5px;margin:0 0 16px}
+
+.opt{display:flex;gap:13px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:11px;margin-bottom:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--teal)}
+.opt:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.opt input{margin:3px 0 0;width:18px;height:18px;accent-color:var(--teal);flex:none;cursor:pointer}
+.opt .txt{flex:1;min-width:0}
+.opt b{display:block;font-size:15.5px}
+.opt small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px;line-height:1.45}
+.opt .px{font-weight:700;color:var(--navy);white-space:nowrap;font-size:15.5px}
+.opt .px em{display:block;font-style:normal;font-weight:400;font-size:12.5px;color:var(--muted);text-align:right}
+
+.qty{display:flex;align-items:center;gap:8px;margin-top:9px}
+.qty button{width:28px;height:28px;border:1px solid var(--line);background:var(--surface);border-radius:7px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer;line-height:1}
+.qty button:hover{border-color:var(--teal)}
+.qty span{min-width:24px;text-align:center;font-weight:600}
+.qty label{font-size:13.5px;color:var(--muted)}
+
+.recap{position:sticky;top:18px}
+.recap .lines{margin:0 0 14px}
+.row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.row:last-child{border-bottom:0}
+.row .lbl{color:var(--ink)}
+.row .lbl small{display:block;color:var(--muted);font-size:12.5px}
+.row .val{white-space:nowrap;font-weight:600}
+.row.remise .val{color:var(--teal-ink)}
+.row.remise .lbl{color:var(--teal-ink)}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--tint);border-radius:11px;padding:15px 17px;margin-top:6px}
+.total b{font-family:var(--display);font-size:15px;color:var(--navy)}
+.total .n{font-family:var(--display);font-size:30px;font-weight:700;color:var(--navy)}
+.tva{font-size:13px;color:var(--muted);margin:9px 0 0}
+.mens{margin-top:12px;padding:12px 14px;border:1px dashed var(--line);border-radius:10px;font-size:14.5px;color:var(--muted)}
+.mens b{color:var(--ink)}
+
+.pay{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.pay h3{font-size:14px;color:var(--navy);margin-bottom:8px}
+.pay .row{font-size:14.5px}
+
+details.bloc{border:1px solid var(--line);border-radius:11px;padding:0;margin-top:12px;background:var(--surface)}
+details.bloc summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:15px;color:var(--navy);list-style:none}
+details.bloc summary::-webkit-details-marker{display:none}
+details.bloc summary::after{content:"+";float:right;color:var(--teal);font-weight:700}
+details.bloc[open] summary::after{content:"–"}
+details.bloc ul{margin:0;padding:0 18px 15px 34px;color:var(--muted);font-size:14.5px}
+details.bloc li{margin-bottom:7px}
+details.bloc li b{color:var(--ink)}
+
+form.env{margin-top:18px}
+form.env label{display:grid;gap:5px;font-size:13.5px;color:var(--muted);font-weight:600;margin-bottom:11px}
+form.env input,form.env textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%}
+form.env textarea{min-height:76px;resize:vertical}
+form.env input:focus,form.env textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+form.env .duo{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+form.env button{font:inherit;font-weight:700;font-size:16px;cursor:pointer;border:0;border-radius:999px;background:var(--teal);color:#fff;padding:14px 24px;width:100%}
+form.env button:hover{background:var(--teal-ink)}
+form.env .rgpd{font-size:12.5px;color:var(--muted);font-weight:400;margin:10px 0 0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13.5px;color:var(--muted)}
+footer p{margin:0 0 5px}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .recap{position:static}
+}
+@media (max-width:520px){ form.env .duo{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="/">SHB <span>CONSEIL</span></a>
+  <a class="retour" href="/">Retour au site</a>
+</div></header>
+
+<div class="wrap hero">
+  <h1>Composez votre devis</h1>
+  <p>Choisissez ce dont vous avez besoin : le détail du prix se calcule devant vous, ligne par ligne. Vous voyez ce qui est compris, ce qui ne l’est pas, et ce que vous réglez. Aucune inscription, aucun engagement.</p>
+</div>
+
+<main><div class="wrap">
+<div class="grid">
+
+  <div>
+    <div class="card">
+      <h2>1. Votre site</h2>
+      <p class="sub">Le point de départ. Tout le reste s’ajoute à ce choix.</p>
+
+      <label class="opt">
+        <input type="radio" name="base" value="vitrine" checked data-px="690" data-rem="200"
+               data-lib="Site vitrine">
+        <span class="txt"><b>Site vitrine</b>
+          <small>Une page, cinq sections. Présentation, services, horaires, plan d’accès, galerie, formulaire de contact, bouton WhatsApp. Nom de domaine et hébergement compris la première année.</small></span>
+        <span class="px">490 €<em>au lieu de 690 €</em></span>
+      </label>
+
+      <label class="opt">
+        <input type="radio" name="base" value="pro" data-px="1290" data-rem="300"
+               data-lib="Site professionnel">
+        <span class="txt"><b>Site professionnel</b>
+          <small>Jusqu’à cinq pages, design personnalisé, galerie, formulaire, intégration de vos réseaux, optimisation de votre fiche Google et une heure de prise en main. Domaine et hébergement compris la première année.</small></span>
+        <span class="px">990 €<em>au lieu de 1 290 €</em></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2>2. Les options</h2>
+      <p class="sub">À n’ajouter que si elles vous servent. Chacune est indépendante et peut être ajoutée plus tard au même prix.</p>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="120" data-lib="Carte ou menu en ligne">
+        <span class="txt"><b>Carte ou menu en ligne</b>
+          <small>Votre carte en vraies pages web au lieu d’une image ou d’un PDF, lisible sur téléphone et modifiable par vous quand un plat change.</small></span>
+        <span class="px">+120 €</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="150" data-lib="Réservation ou prise de rendez-vous">
+        <span class="txt"><b>Réservation ou prise de rendez-vous</b>
+          <small>Les demandes vous arrivent par e-mail. Si un outil tiers est utilisé, son abonnement éventuel reste à votre charge et à votre nom.</small></span>
+        <span class="px">+150 €</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="250" data-lib="Catalogue jusqu’à 30 produits">
+        <span class="txt"><b>Catalogue jusqu’à 30 produits</b>
+          <small>Pour présenter votre gamme avec photos et descriptions. Sans paiement en ligne — celui-ci se chiffre séparément.</small></span>
+        <span class="px">+250 €</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="190" data-lib="Langue supplémentaire">
+        <span class="txt"><b>Langue supplémentaire</b>
+          <small>L’ensemble du site traduit dans une seconde langue, pour une clientèle étrangère.</small></span>
+        <span class="px">+190 €</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="190" data-lib="Création de 2 profils réseaux">
+        <span class="txt"><b>Création de deux profils réseaux</b>
+          <small>Instagram, Facebook ou TikTok : création, informations de contact, présentation et identité visuelle de base.</small></span>
+        <span class="px">+190 €</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" class="o" data-px="149" data-lib="Optimisation de la fiche Google">
+        <span class="txt"><b>Optimisation de votre fiche Google</b>
+          <small>Coordonnées cohérentes, horaires à jour, description, photos, liens. Sans promesse de position : personne ne peut en donner.</small></span>
+        <span class="px">+149 €</span>
+      </label>
+
+      <div class="opt" style="cursor:default">
+        <span style="width:18px;flex:none"></span>
+        <span class="txt"><b>Pages supplémentaires</b>
+          <small>Au-delà de ce que comprend la formule choisie.</small>
+          <span class="qty">
+            <button type="button" id="pmoins" aria-label="Retirer une page">−</button>
+            <span id="pnb">0</span>
+            <button type="button" id="pplus" aria-label="Ajouter une page">+</button>
+            <label for="pnb">page(s)</label>
+          </span></span>
+        <span class="px">+90 €<em>par page</em></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Après la livraison</h2>
+      <p class="sub">Facultatif. Sans maintenance, l’hébergement et le nom de domaine repassent à votre charge dès la deuxième année, pour environ 70 € par an.</p>
+
+      <label class="opt">
+        <input type="radio" name="mnt" value="0" checked data-px="0" data-lib="Aucune maintenance">
+        <span class="txt"><b>Aucune maintenance</b><small>Vous reprenez l’hébergement et le domaine en année 2.</small></span>
+        <span class="px">—</span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="mnt" value="39" data-px="39" data-lib="Maintenance Essentielle">
+        <span class="txt"><b>Essentielle</b><small>Hébergement, nom de domaine, mises à jour, sauvegardes et surveillance.</small></span>
+        <span class="px">39 €<em>par mois</em></span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="mnt" value="69" data-px="69" data-lib="Maintenance Confort">
+        <span class="txt"><b>Confort</b><small>Essentielle, plus une heure de modifications par mois.</small></span>
+        <span class="px">69 €<em>par mois</em></span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="mnt" value="119" data-px="119" data-lib="Maintenance Évolution">
+        <span class="txt"><b>Évolution</b><small>Confort, plus trois heures par mois et une assistance prioritaire.</small></span>
+        <span class="px">119 €<em>par mois</em></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="recap">
+    <div class="card">
+      <h2>Le détail de votre devis</h2>
+      <p class="sub">Mis à jour à chaque choix.</p>
+      <div class="lines" id="lignes"></div>
+      <div class="total"><b>Total à régler</b><span class="n" id="total">—</span></div>
+      <p class="tva">Prix nets. TVA non applicable, article 293 B du CGI : il n’y a pas de 20 % à ajouter.</p>
+      <div id="mensuel"></div>
+
+      <div class="pay">
+        <h3>Comment vous réglez</h3>
+        <div id="echeances"></div>
+      </div>
+    </div>
+
+    <details class="bloc">
+      <summary>Compris, sans supplément</summary>
+      <ul>
+        <li>La mise en cohérence de votre <b>nom, adresse et horaires</b> partout où ils apparaissent</li>
+        <li><b>Deux séries de corrections</b> après la première livraison</li>
+        <li>La mise en ligne et la configuration technique</li>
+        <li>La redirection de votre ancienne adresse vers le nouveau site, si elle existe</li>
+        <li><b>La propriété du nom de domaine et des contenus</b>, à votre nom</li>
+        <li>Livraison sous <b>7 jours ouvrés</b> (15 pour un site professionnel) à réception de vos textes et photos</li>
+      </ul>
+    </details>
+
+    <details class="bloc">
+      <summary>Non compris — pour éviter toute surprise</summary>
+      <ul>
+        <li>L’hébergement <b>à partir de la deuxième année</b> : environ 70 € par an, sauf si vous prenez une maintenance</li>
+        <li>L’abonnement d’un <b>outil tiers de réservation</b>, s’il en faut un : il reste à votre nom</li>
+        <li>Les <b>photos professionnelles</b> : vos photos sont intégrées, aucun reportage sur place n’est prévu</li>
+        <li>La publicité payante, le référencement avancé et la gestion quotidienne de vos réseaux</li>
+        <li><b>Aucune garantie</b> de position dans Google ni de nombre de clients</li>
+      </ul>
+    </details>
+
+    <div class="card" style="margin-top:14px">
+      <h2>Recevoir ce devis</h2>
+      <p class="sub">Votre sélection nous est transmise telle quelle. Réponse sous 24 h ouvrées.</p>
+      <form class="env" action="https://formsubmit.co/shbconseilei@gmail.com" method="POST">
+        <div class="duo">
+          <label>Votre nom<input type="text" name="Nom" required autocomplete="name"></label>
+          <label>Nom de l’entreprise<input type="text" name="Entreprise" autocomplete="organization"></label>
+        </div>
+        <div class="duo">
+          <label>Ville<input type="text" name="Ville" autocomplete="address-level2"></label>
+          <label>Votre e-mail<input type="email" name="Email" required autocomplete="email"></label>
+        </div>
+        <label>Une précision à ajouter ?<textarea name="Message"></textarea></label>
+        <div class="hp" aria-hidden="true"><label>Ne pas remplir<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_subject" value="Devis composé sur shbconseil.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://shbconseil.com/merci.html?l=fr">
+        <input type="hidden" name="Devis détaillé" id="f_detail" value="">
+        <input type="hidden" name="Total" id="f_total" value="">
+        <input type="hidden" name="Maintenance" id="f_mnt" value="">
+        <input type="hidden" name="Provenance" id="src" value="direct">
+        <button type="submit">Envoyer ce devis</button>
+        <p class="rgpd">Vos informations servent uniquement à vous répondre. Ce devis est une estimation : il vous est confirmé par écrit avant tout engagement.</p>
+      </form>
+    </div>
+  </div>
+
+</div>
+</div></main>
+
+<footer><div class="wrap">
+  <p><strong>SHB CONSEIL EI</strong> — Entreprise individuelle — Créteil (94) — SIRET 945 154 235 00010 — APE 7022Z</p>
+  <p>TVA non applicable, art. 293 B du CGI. Devis valable 30 jours. Le site et le nom de domaine restent la propriété du client après paiement complet.</p>
+  <p><a href="mailto:shbconseilei@gmail.com">shbconseilei@gmail.com</a> · 07 59 83 66 20</p>
+</div></footer>
+
+<script>
+(function(){
+  var euro = function(n){ return n.toLocaleString('fr-FR').replace(/ | /g,' ') + ' €'; };
+  var pages = 0;
+  var $ = function(id){ return document.getElementById(id); };
+
+  $('pplus').addEventListener('click', function(){ if(pages < 10){ pages++; $('pnb').textContent = pages; calc(); } });
+  $('pmoins').addEventListener('click', function(){ if(pages > 0){ pages--; $('pnb').textContent = pages; calc(); } });
+  document.querySelectorAll('input[name=base], input.o, input[name=mnt]').forEach(function(e){
+    e.addEventListener('change', calc);
+  });
+
+  function calc(){
+    var base = document.querySelector('input[name=base]:checked');
+    var px = +base.dataset.px, rem = +base.dataset.rem;
+    var html = '', texte = [], total = px - rem;
+
+    html += ligne(base.dataset.lib, 'prix standard', px);
+    html += ligne('Remise de lancement', '5 premiers clients, jusqu’au 31/12/2026', -rem, true);
+    texte.push(base.dataset.lib + ' : ' + euro(px));
+    texte.push('Remise de lancement : -' + euro(rem));
+
+    document.querySelectorAll('input.o:checked').forEach(function(o){
+      var p = +o.dataset.px;
+      total += p;
+      html += ligne(o.dataset.lib, '', p);
+      texte.push(o.dataset.lib + ' : +' + euro(p));
+    });
+
+    if(pages > 0){
+      var pp = pages * 90;
+      total += pp;
+      html += ligne('Page' + (pages>1?'s':'') + ' supplémentaire' + (pages>1?'s':''), pages + ' × 90 €', pp);
+      texte.push(pages + ' page(s) supplémentaire(s) : +' + euro(pp));
+    }
+
+    $('lignes').innerHTML = html;
+    $('total').textContent = euro(total);
+
+    var m = document.querySelector('input[name=mnt]:checked'), mp = +m.dataset.px;
+    $('mensuel').innerHTML = mp
+      ? '<div class="mens">Puis <b>' + euro(mp) + ' par mois</b> à partir du 13ᵉ mois — ' + m.dataset.lib.replace('Maintenance ','') + '. Engagement de 6 mois.</div>'
+      : '<div class="mens">Sans maintenance : prévoyez <b>environ 70 € par an</b> d’hébergement et de nom de domaine à partir de la 2ᵉ année.</div>';
+
+    var ech = ligne('Acompte à la commande', '40 %', Math.round(total*0.4))
+            + ligne('Solde à la livraison', '60 %', total - Math.round(total*0.4));
+    if(total >= 400){
+      ech += '<div class="mens" style="margin-top:10px">Ou <b>en trois fois sans frais</b> : '
+           + euro(Math.round(total*0.4)) + ' à la commande, puis '
+           + euro(Math.round(total*0.3)) + ' à la validation de la maquette, puis '
+           + euro(total - Math.round(total*0.4) - Math.round(total*0.3)) + ' à la livraison.</div>';
+    }
+    $('echeances').innerHTML = ech;
+
+    $('f_detail').value = texte.join(' | ');
+    $('f_total').value = euro(total);
+    $('f_mnt').value = mp ? m.dataset.lib + ' (' + euro(mp) + '/mois)' : 'Aucune';
+  }
+
+  function ligne(lbl, sub, val, remise){
+    return '<div class="row' + (remise ? ' remise' : '') + '"><span class="lbl">' + lbl
+         + (sub ? '<small>' + sub + '</small>' : '')
+         + '</span><span class="val">' + (val < 0 ? '− ' + euro(-val) : euro(val)) + '</span></div>';
+  }
+
+  var p = new URLSearchParams(location.search), s = p.get('utm_source') || p.get('src') || '';
+  if(!s && document.referrer){ try { s = new URL(document.referrer).hostname; } catch(e){} }
+  if(s) $('src').value = s;
+
+  calc();
+})();
+</script>
+</body>
+</html>
